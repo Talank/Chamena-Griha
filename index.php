@@ -1,25 +1,19 @@
-<?php  
-	session_start();
-	$title = "Chamena Griha";
-	include('header.php');
-?>
+<!--***********in this part specify the things included in <head>...</head> section************ -->
+<!--*****ptovide the name of title, css links, js links in appropriate variables or array****** -->
+<!--*if css/js file are not needed then leave the array empty but do not destroy the variables* -->
 
-	<section class="container">
-		<?php 
-			if (isset($_SESSION['u_id'])) {
-				if ($_SESSION['type'] == 0 || $_SESSION['type'] == 1 || $_SESSION['type'] == 2) 
-					include('customer/customer_home.php');
-				elseif ($_SESSION['type'] == 3)
-					include('college/college_home.php');
-				else
-					include('canteen/canteen_home.php');					
-			}
+<?php 
+	$title="home";
+	$css_href = array("css/login.css","css/style.css");
+	require_once('header.php');
+ ?>
 
-			else
-				include('login.php');
-		 ?>			
-	</section>
+ <section class="container">
+	<?php 
+			include('login.php');
+	 ?>			
+</section>
 
-<?php  
-	include('footer.php');
-?>
+ <?php 
+ 	include_once('footer.php');
+  ?>

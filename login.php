@@ -1,28 +1,4 @@
-<?php
-	if(isset($_GET['username_not_found'])==true) {
-		echo '
-			<script type = "text/javascript">
-				// var err = document.getElementById("loginError1");
-				// err.style.color = "red";
-				// err.innerHTML("Username Not Found");
-				alert("Username Not found");
-			</script>
-		';
-	}
-	else if(isset($_GET['password_wrong'])==true) {
-		echo '
-			<script type = "text/javascript">
-				// var err = document.getElementById("loginError2");
-				// err.style.color = "red";
-				// err.innerHTML("Invalid Username or Password");
-				alert("Invalid Username or Password");
-			</script>
-		';
-	}
-	else{
-		// echo 'Valid';
-	}
-?>	
+<!--**the div tag is inside the section tag which covers intire body other than header and footer**-->
 <div>
 	<div class = loginbox>
 		<img src="images/logo.png" class = "head-logo">
