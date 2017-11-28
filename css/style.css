@@ -1,0 +1,172 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url("../images/background.png");
+	background-size: cover;
+	font-family: "Microsoft JhengHei Light";
+	/*src: url(../fonts/"PoiretOne-Regular.ttf");*/
+}
+
+header, footer {
+	width: 100%;
+	padding: 20px 0px;
+}
+
+.container {
+	width: 100%;
+	background: #e9f9e8;
+}
+
+.content-wrap {
+	position: relative;
+	margin: auto;
+	max-width: 70%;
+}
+
+/*HEADER
+-----------------*/
+
+header {
+	background: #ff713f;
+	margin-bottom: 20px;
+}
+
+header img {
+	width: 160px;
+	border-radius: 10px;
+}
+
+
+/*Search Bar
+-------------*/
+
+.search{
+	height: 30px;
+	border-radius: 5px;
+	border:  2px solid #fff;
+	outline: none;
+}
+
+.search-box i {
+	cursor: pointer;
+}
+.search:focus {
+	border: 2px solid #776e6e;
+}
+
+
+/*account settings division
+-------------------------*/
+
+.acc-settings {
+	display: inline-block;
+	position: absolute;
+	top: 20%;
+	right: 0;
+	
+}
+.acc-settings label {
+	cursor: pointer;
+}
+
+/*Dropdown Button
+-----------------*/
+.dropbtn {
+	background: #2951a0;
+	font-size: 30px;
+	padding: 7px 10px;
+	border-radius: 50%;
+	color: #fff;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	
+}
+
+.dropbtn:hover {
+	background: #284777;
+}
+
+.dropbtn:focus {
+	background: #284777;
+}
+/*Dropdown contents
+---------------------*/
+.menu {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	right: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.menu a:hover {
+	background-color: #f1f1f1;
+}
+/*For showing dropdown menu on clicking--class called in javascript
+------------------------------------------------------------------*/
+.show-menu {
+	display: block;
+}
+
+/*FOOTER
+--------------------*/
+footer {
+	color: #d4d7db;
+	background: #424b59;
+	margin-bottom: 0;
+}
+
+.f-control {
+	float: left;
+}
+.f-control a{
+	font-size: 10px;
+	text-decoration: none;
+	color: #d4d7db;
+	margin-right: 30px;
+}
+.f-control a:hover {
+	color: #fff;
+}
+
+.social {
+	text-align: right;
+}
+
+.social a{
+	display: inline-block;
+	color: #fff;
+	text-align: center;
+	border-radius: 5px;
+	margin-left: 20px;
+	width: 25px;
+	height: 25px;
+}
+
+.facebook:hover {
+	background: #3b5998;
+}
+
+.instagram:hover {
+	background: #cd486b;
+}
+
+.twitter:hover {
+	background: #1dcaff;
+}

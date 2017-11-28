@@ -1,0 +1,134 @@
+.head-logo {
+	position: absolute;
+	top: -20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 160px;
+	border-radius: 10px;
+}
+
+.loginbox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 350px;
+	padding: 80px 20px 20px 20px;
+	border: 10px solid rgba(255, 255, 255, .2);
+	border-radius: 5px;
+	background: rgba(255, 255, 255, .9);
+	box-shadow: 10px 10px 15px rgba(0, 0, 0, .5);	
+}
+
+.user {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: absolute;
+	top: calc(-4px);
+	left: calc(50% - 45px)
+}
+
+h3{
+	margin: 5px 0 15px;
+	padding: 0, 0, 20px;
+	text-align: center;
+}
+
+.loginbox input[type="text"]{
+	width: 100%;
+	height: 40px;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid;
+	outline: none;
+	color: #262626;
+	background: transparent;
+	font-size: 16px;
+	font-family: "corbel";
+	transition: border 0.05s;
+}
+
+.loginbox input[type="text"]:focus,
+.loginbox input[type="text"].focus {
+  border-bottom: solid 2px #3b88ed;
+}
+
+.loginbox input[type="password"]{
+	width: 100%;
+	height: 40px;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid;
+	border-radius: 0px;
+	outline: none;
+	color: #262626;
+	background: transparent;
+	font-size: 16px;
+	font-family: "corbel";
+	transition: border 0.05s;	
+}
+
+.loginbox input[type="password"]:focus,
+.loginbox input[type="password"].focus {
+  border-bottom: solid 2px #3b88ed;
+}
+
+
+.loginbox input[type="submit"] {
+	width: 100%;
+	height: 40px;
+	margin-bottom: 30px;
+	border: none;
+	outline: none;
+	background: #ed292a;
+	font-size: 16px;
+	color: #fff;
+	border-radius: 20px;
+	cursor: pointer; 
+}
+
+.loginbox input[type="submit"]:hover {
+	background: #dd292a;
+}
+
+.loginbox a {
+	position: absolute;
+	text-decoration: none;
+	color: #4285f4;
+	padding-left: 25%;
+	font-size: 14px;
+}
+.loginbox a:hover{
+	color: #3333ff;
+	text-decoration: underline;
+}
+
+.login_foot {
+	position: absolute;
+	top: 110%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 350px;
+	height: 40px;
+	box-sizing: border-box;
+	border: 10px solid rgba(255, 255, 255, .2);
+	border-radius: 5px;
+	background: rgba(255, 255, 255, 0.9);
+	box-shadow: 10px 10px 15px rgba(0, 0, 0, .5);
+}
+.login_foot a{
+	position: absolute;
+	text-decoration: none;
+	font-weight: bold;
+	color: #4285f4;
+	padding-left: 10px;
+	
+}
+.login_foot a:hover{
+	color: #3333ff;
+	text-decoration: underline;
+}
+
+

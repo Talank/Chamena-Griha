@@ -1,0 +1,34 @@
+.nav-college {
+    position: absolute;
+    top: 35%;
+    display: inline-block;
+}
+.nav-college li a {
+    text-decoration: none;
+    color: #fff;
+    margin: 2.2em;
+    padding: 5px 0;
+    font-size: 20px;
+    
+}
+
+@media (max-width:1400px) {
+    .nav-college li a {
+        font-size: 15px;
+    }
+}
+
+.nav-college li a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+ul {
+    display: inline;
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+    text-decoration: none;
+    color: #fff;
+}
