@@ -5,7 +5,9 @@
 	<title>
 		<?php echo "$title"; ?>
 	</title>
-
+	
+	<link rel="icon" href="images/favicon.ico">
+	
 	<!--**************php code for including css links provided in array $css_href**************** -->
 	<?php
 		$num_of_css_href_links = count($css_href);

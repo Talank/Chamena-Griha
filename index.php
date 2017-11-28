@@ -4,7 +4,7 @@
 
 <?php 
 	$title="home";
-	$css_href = array("css/login.css","css/style.css");
+	$css_href = array("css/login.css","css/style.css","font-awesome/css/font-awesome.min.css");
 	require_once('header.php');
  ?>
 
