@@ -9,8 +9,17 @@ index.php{
 			linked css and js files specified by index.php;
 		}
 
-	if(session['u_id'])-----------------------------------------------------incomplete
-		redirect_to(home.php);-----------------------------------------------------incomplete
+	if(session['u_id']){-------------------------------------------------------------------------incomplete
+		
+		if ($_SESSION['type'] == 0 || $_SESSION['type'] == 1 || $_SESSION['type'] == 2) 
+			redirect_to('customer/customer_home.php');
+		
+		elseif ($_SESSION['type'] == 3)
+			redirect_to('college/college_home.php');
+		
+		else
+			redirect_to('canteen/canteen_home.php');
+		}
 	
 	else
 		include(login.php);

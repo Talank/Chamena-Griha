@@ -31,5 +31,4 @@
 				//$error_msg="username not found";
 		}
 	}
-
  ?>
