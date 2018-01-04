@@ -1,0 +1,174 @@
+.header-content {
+	height: 76px;
+
+}
+
+.header-content img {
+	width: 160px;
+	border-radius: 10px;
+	display: block;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.signin-button {
+	position: absolute;
+	top: 23px;
+	left: 92%;
+	height: 34px;
+	width: 70px;
+	padding: 4px 9px;
+	background:#4787ed;
+	border: 1px solid rgb(146, 172, 239);
+	border-radius: 3px;
+	text-decoration: none;
+	color: #e3e6ed;
+}
+
+.signin-button:hover {
+	background: #386dc1;
+}
+ .container-signup h1 {
+ 	text-align: center;
+ 	margin: 10px 30px 20px 30px;
+ 	font-size: 47px;
+ 	font-weight: lighter; 
+ 	color: white;
+ 	font-family: 'century gothic';
+ }
+
+.signupbox {
+	box-sizing: content-box;
+	width: 430px;
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 20px 20px 20px 20px;
+	border: 10px solid rgba(255, 255, 255, .2);
+	border-radius: 5px;
+	background: rgba(255, 255, 255, .9);
+	box-shadow: 10px 10px 15px rgba(0, 0, 0, .5);
+
+}
+
+.fieldbox {
+	display: block;
+	font-family: "corbel";
+	font-size: 15px;
+	font-weight: normal;
+}
+
+.signupbox input[name="firstname"], input[name="lastname"] {
+	height: 30px;
+	background: transparent;
+	font-size: 15px;
+	border: 1px solid #aaacaf ;
+	box-shadow: 1px 1px 3px #bcbcbc inset;
+	border-radius: 5px;
+	outline: none;
+}
+
+.signupbox input[name="firstname"] {
+	width: 49%;
+	margin-right: 1px;
+}
+
+.signupbox input[name="lastname"] {
+	width: 49%;
+}
+
+.signupbox input[name="username"], .signupbox input[type="password"], 
+.signupbox input[type="email"], .signupbox input[type="number"], input[type="tel"] {
+	width: 100%;
+	height: 30px;
+	background: transparent;
+	box-shadow: 1px 1px 3px #bcbcbc inset;
+	font-size: 15px;
+	border: 1px solid #aaacaf ;
+	border-radius: 5px;
+	outline: none;
+}
+.signupbox input[type="text"]:focus,
+ .signupbox input[type="text"].focus {
+	border: 1px solid rgba(48, 115, 219, 1);
+	background: #f2f2f2;
+}
+
+.signupbox input[type="email"]:focus,
+ .signupbox input[type="email"].focus {
+	border: 1px solid rgba(48, 115, 219, 1);
+	background: #f2f2f2;
+}
+
+.signupbox input[type="password"]:focus,
+ .signupbox input[type="password"].focus {
+	border: 1px solid rgba(48, 115, 219, 1);
+	background: #f2f2f2;
+}
+
+.signupbox input[type="number"]:focus,
+ .signupbox input[type="number"].focus {
+	border: 1px solid rgba(48, 115, 219, 1);
+	background: #f2f2f2;
+}
+.signupbox input[type="tel"]:focus,
+ .signupbox input[type="tel"].focus {
+	border: 1px solid rgba(48, 115, 219, 1);
+	background: #f2f2f2;
+}
+
+
+/*SIGNUP BUTTON
+----------------*/
+.signupbox input[name="signup"] {
+	width: 100%;
+	height: 40px;
+	font-size: 16px;
+	border-radius: 10px;
+	color: white;
+	background: #26a837; 
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+
+.signupbox input[name="signup"]:hover {
+	background: #238e31; 
+}
+
+.form-control p {
+	text-align: center;
+	font-family: "arial";
+	font-size: 15px;
+	color: #6a737d;
+	margin-bottom: 3px;
+}
+
+.form-control a {
+	text-decoration: none;
+	text-align: center;
+	margin-left: 17%;
+	font-family: "arial";
+	font-size: 12px;
+	color: #0366d6;
+}
+
+.form-control a:hover {
+	text-decoration: underline;
+}
+
+.copyright {
+	text-align: center;
+	font-size: 11px;
+	font-family: "arial";
+	color: #6a737d;
+	display: block;
+	padding-top: 20px;
+	margin: auto;
+}
+
+.errormsg {
+	font-size: 13px;
+}
+
+
+

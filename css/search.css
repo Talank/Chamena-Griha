@@ -1,0 +1,41 @@
+.food-item, .beverage-item {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 20px;
+	height: 450px;
+	width: 49%;	
+	border: 1px solid #aaacaf;
+	padding: 1px;
+}
+
+.food-item img, .beverage-item img {
+	width: 100%;
+	height: 300px;
+}
+
+.food-item span, .beverage-item span{
+	font-size: 30px;
+	font-weight: bold;
+	color: #b72c2c;
+}
+
+.food-item a, .beverage-item a {
+	position: absolute;
+	display: inline-block;
+	right: 0;
+	width:200px;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 900;
+	border-radius: 50px;
+	padding: 5px;
+	margin-bottom: 5px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	background: #b72c2c; 
+}
+
+.food-item a:hover, .beverage-item a:hover {
+	background: #931a1a;
+}

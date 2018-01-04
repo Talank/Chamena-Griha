@@ -1,17 +1,15 @@
+PRAJWAL:
+Responsive webpage design done. Most of the design issues must be fixed now. If you find any problems, inform me.
+
 TALANK:
--In previous repository, there ware some problem on linking the pages. i had developed 95% of the backend but even i couldn't find the mistake.
--Now i have some css knowledge and i belive i can complete the whole system on my own from the beginning.
+test the forgot password while login. 
+how to check?
 
-1) commit 1:
--In this commit, the login page. i.e index.php, login.php, login.css and style.css is dine.
--I have not modified the css code done by prajwal.
--I have make the linking more clear and easier by making array of css links.
--The header.php has been completely changed.
-
-2) commit 2:
--login process is copied from previous file.
--start to write developer's mannual like a file to show flow and functions in high level of abstraction.
--basic function is kept inside the process folder and now contails only the redirect_to() function.
-
-3) commit 3:
--
+1) signup, provide email address
+2) click on forgot password
+3) provide your email address
+4) now go to phpmyadmin and open user table
+5) search your email address, find and copy the associated forgot_pw_token and copy it
+6) go to localhost/Canteen/process/reset_password.php?token=forgot_pw_token&&email=your_email_address
+7) provide new password
+8) now login with new password

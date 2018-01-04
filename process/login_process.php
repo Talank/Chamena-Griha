@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 
-	include_once 'basic_functions.php';
+	include_once '../basic_functions.php';
 	include_once('db_conn.php');
 	if (isset($_POST['login'])) {
 		$username = $conn->real_escape_string($_POST['username']);
@@ -22,13 +22,14 @@
 			}
 			else{
 				redirect_to("../index.php?password_wrong");
-				//$error_msg="password wrong";
+				$error_msg="password wrong";
 			}
 		}
 
 		else{
 			redirect_to("../index.php?username_not_found");
-				//$error_msg="username not found";
+				$error_msg="username not found";
 		}
 	}
+
  ?>
