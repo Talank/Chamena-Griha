@@ -1,4 +1,4 @@
-<?php 
+<?php
 	session_start();
 
 	include_once '../basic_functions.php';
@@ -14,20 +14,10 @@
 		$gender = $conn->real_escape_string($_POST['gender']);
 		$contact = $conn->real_escape_string($_POST['contact']);
 		$email = $conn->real_escape_string($_POST['email']);
-
-		//fetching image file
-		//$image = addslashes(file_get_contents($_FILES['userPic']['tmp_name']));
-		//$image_name = addslashes($_FILES['userPic']['name']);			//code for image name not needed now
-		//$image_size = getimagesize($_FILES['userPic']['tmp_name']);	//code to get img size.. useful to validate 																//	the file is image or not
-
-
-		//encrypting the password 
 		$password=md5($password);
 
-
-		//image uploading 
-		$user_pic=$_FILES["userPic"]["name"];
-		$target_dir = "../images/users/";
+		$food_pic=$_FILES["userPic"]["name"];
+		$target_dir = "../images/food/";
 		$target_file = $target_dir . basename($_FILES["userPic"]["name"]);
 		$uploadOk = 1;
 		$imageFileType =strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -62,10 +52,8 @@
 				if($imageFileType=="jpg"||$imageFileType=="jpeg")
 					$imageFileType='jpeg';
 
-				//if (resizeImage(1024,$_FILES["foodPic"]["tmp_name"],$target_file,$imageFileType)) {
-				if (move_uploaded_file($_FILES["foodPic"]["tmp_name"], $target_file)) {
-					echo "The file ". basename( $_FILES["foodPic"]["name"]). " has been uploaded.";
-
+				if (move_uploaded_file($_FILES["userPic"]["tmp_name"], $target_file)) {
+					echo "The file ". basename( $_FILES["userPic"]["name"]). " has been uploaded.";
 
 					$check_existence_query = "SELECT * FROM user WHERE username = '$username'";
 					$result = mysqli_query($conn , $check_existence_query)
@@ -106,7 +94,7 @@
 							elseif ($type == 2) 
 								$table = 'other';
 							elseif($type == 3)
-								$table = 'clzAdmin';
+								$table = 'collegeadmin';
 							else
 								$table = 'canteen';
 
@@ -149,9 +137,11 @@
 						}
 						else
 							redirect_to("../signup.php?process=failed");
-				}
-
-	    }
-             
+					}					
+				}	
+				else
+					redirect_to("../signup.php?failed_upload");
+			}	
+		}
 	}
- ?>
+  ?>

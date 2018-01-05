@@ -22,6 +22,20 @@
 
 <div id="food" >
 	<h1>FOOD MENU</h1>
+
+	<?php 
+		include '../process/db_conn.php';
+		$query="select name, photo from food";
+		$result=mysqli_query($conn,$query);
+		$nums=mysqli_num_rows($result);
+		if($nums>0){
+			while($row=mysqli_fetch_array($result)){
+				echo"<img src=../Images/$row[photo] id=img1><br>";
+				echo"<b>$row[name]<br>";
+			}
+		}
+	?>
+
 	<div class="food-menu">
 		<div class="food-item">
 			<div class="row1">
