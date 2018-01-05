@@ -13,7 +13,7 @@
 		$row = mysqli_fetch_array($result);
 		
 		if ($row){
-			if ($password == ($row['password'])) {
+			if (md5($password) == ($row['password'])) {
 				$error_msg="";
 				$_SESSION['username']= $username;
 				$_SESSION['u_id']= $row['u_id'];

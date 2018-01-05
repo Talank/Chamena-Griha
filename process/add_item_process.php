@@ -43,7 +43,6 @@
 				if($imageFileType=="jpg"||$imageFileType=="jpeg")
 					$imageFileType='jpeg';
 
-			if (resizeImage(1024,$_FILES["foodPic"]["tmp_name"],$target_file,$imageFileType)) {
 				if (move_uploaded_file($_FILES["foodPic"]["tmp_name"], $target_file)) {
 					echo "The file ". basename( $_FILES["foodPic"]["name"]). " has been uploaded.";
 
@@ -82,10 +81,7 @@
 			        echo "Sorry, there was an error uploading your file.";
 			    }
 		    } 
-		    else {
-		        echo "Sorry, there was an error uploading your file.";
 		    }
-	    }
 	}
 }
 ?>
