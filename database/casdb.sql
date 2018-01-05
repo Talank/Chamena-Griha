@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2018 at 05:59 AM
+-- Generation Time: Jan 05, 2018 at 04:24 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -43,7 +43,11 @@ INSERT INTO `account` (`account_no`, `amount`, `u_id`) VALUES
 (54, 0, 92),
 (53, 0, 91),
 (52, 0, 90),
-(56, 0, 94);
+(56, 0, 94),
+(57, 0, 95),
+(58, 0, 96),
+(59, 0, 97),
+(60, 0, 98);
 
 -- --------------------------------------------------------
 
@@ -168,7 +172,11 @@ INSERT INTO `student` (`reg_id`, `first_name`, `last_name`, `u_id`, `photo`, `ac
 (789, 'Madan', 'Poudel', 90, '', 52, 45654458789, 'male'),
 (385, 'Talank', 'Baral', 91, '', 53, 9840010300, 'male'),
 (6511223, 'Ashish', 'Shrestha', 92, '', 54, 9806627492, 'male'),
-(478, 'Prajwal', 'Adhikari', 94, '', 56, 9804125595, 'male');
+(478, 'Prajwal', 'Adhikari', 94, '', 56, 9804125595, 'male'),
+(785, 'Bibek', 'Thapa', 95, '', 57, 9850012033, 'male'),
+(458, 'Ajit', 'Gauli', 96, '', 58, 9865412358, 'male'),
+(456, 'Anchal', 'Ghale', 97, '', 59, 9856412304, 'male'),
+(124, 'Apil', 'Bhattarai', 98, '', 60, 9874621584, 'male');
 
 -- --------------------------------------------------------
 
@@ -207,13 +215,17 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`u_id`, `username`, `password`, `type`, `email`, `forgot_pw_token`) VALUES
-(82, 'canteen123', 'canteen123', 4, 'canteen@gces.edu.np', NULL),
+(82, 'canteen123', '5f4dcc3b5aa765d61d8327deb882cf99', 4, 'canteen@gces.edu.np', NULL),
 (92, 'elton_aasis', 'elton123', 0, 'aashishshrestha5532@gmail.com', 'osig08twfbuhr3n'),
-(91, 'Talank123', 'talank123', 0, 'talank@gces.edu.np', NULL),
-(89, 'college123', 'college123', 3, 'gces@gces.edu.np', NULL),
+(91, 'Talank123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'talank@gces.edu.np', NULL),
+(89, 'college123', '5f4dcc3b5aa765d61d8327deb882cf99', 3, 'gces@gces.edu.np', NULL),
 (90, 'Maddy123', 'maddy123', 0, 'madan@gces.edu.np', 'gf3yk016z8imdv5'),
 (93, 'elton_aasis123', 'elton123', 0, 'aashishshrestha5532@gmail.com', 'osig08twfbuhr3n'),
-(94, 'prajwal', 'prajwal123', 0, 'prajwal.ady@gmail.com', NULL);
+(94, 'prajwal', 'prajwal123', 0, 'prajwal.ady@gmail.com', NULL),
+(95, 'bibek123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'bibek@gmail.com', NULL),
+(96, 'Ajit123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'ajit@gmail.com', NULL),
+(97, 'Anchal123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'anchal@gmail.com', NULL),
+(98, 'Apil123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'apil@gmail.com', NULL);
 
 --
 -- Indexes for dumped tables
@@ -281,7 +293,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `account_no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `account_no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `beverage`
@@ -323,7 +335,7 @@ ALTER TABLE `teacher`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
