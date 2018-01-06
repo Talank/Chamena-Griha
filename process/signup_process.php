@@ -17,7 +17,7 @@
 		$password=md5($password);
 
 		$food_pic=$_FILES["userPic"]["name"];
-		$target_dir = "../images/food/";
+		$target_dir = "../images/users/";
 		$target_file = $target_dir . basename($_FILES["userPic"]["name"]);
 		$uploadOk = 1;
 		$imageFileType =strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

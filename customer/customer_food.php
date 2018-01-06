@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/clz_admin_home.css">
 
 	<script type="text/javascript" src="../js/global.js"></script>
+	<script type="text/javascript" src="../js/add_to_cart.js"></script>
 </head>
 <body>
 	<?php 
@@ -20,59 +21,36 @@
 <div class="container">
 	<div class="content-wrap">
 
-<div id="food" >
-	<h1>FOOD MENU</h1>
+		<div id="food" >
+			<h1>FOOD MENU</h1>
 
-	<?php 
-		include '../process/db_conn.php';
-		$query="select name, photo from food";
-		$result=mysqli_query($conn,$query);
-		$nums=mysqli_num_rows($result);
-		if($nums>0){
-			while($row=mysqli_fetch_array($result)){
-				echo"<img src=../Images/$row[photo] id=img1><br>";
-				echo"<b>$row[name]<br>";
-			}
-		}
-	?>
-
-	<div class="food-menu">
-		<div class="food-item">
-			<div class="row1">
-				<img src="../images/food/momo.jpg">
+			<div class="food-menu">
+				<?php 
+					include '../process/db_conn.php';
+					$query="select food_id,name, price, photo from food";
+					$result=mysqli_query($conn,$query);
+					$nums=mysqli_num_rows($result);
+					if($nums>0){
+						while($row=mysqli_fetch_array($result)){
+							echo"<div class=food-item>
+								<div class=row1>
+									<img src=../images/food/$row[photo]>
+								</div>
+								<div class=row2>
+									<h2>$row[name]</h2>
+									<span>$row[price]</span>
+									<input type=number name=food_id id=food_id value=$row[food_id] style='display: none'>
+									<a href=../process/add_to_cart.php?food_id=$row[food_id]>Add to cart</a>
+								</div>
+							</div>";
+						}
+					}
+				?>
 			</div>
-			<div class="row2">
-				<h2>Chicken Momo</h2>
-				<span>Rs 120</span>
-				<a href="#">Add to cart</a>
-			</div>
-		</div>
-
-		<div class="food-item">
-			<div class="row1">
-				<img src="../images/food/samosa.jpg">
-			</div>
-			<div class="row2">
-				<h2>Samosa</h2>
-				<span>Rs 15</span>
-				<a href="#">Add to cart</a>
-			</div>
-		</div>
-
-		<div class="food-item">
-			<div class="row1">
-				<img src="../images/food/pizza.jpg">
-			</div>
-			<div class="row2">
-				<h2>Pizza</h2>
-				<span>Rs 300</span>
-				<a href="#">Add to cart</a>
-			</div>
-		</div>
-	</div>
+		</div> 
 	</div>
 </div>
-</div>
+<!--</div>-->
 <?php 
 	include('../footer.php');
  ?>

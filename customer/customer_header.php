@@ -15,7 +15,7 @@
 		background-size: cover;
 	}
 </style>
-
+<?php include('../process/cart_count.php'); ?>
 <header class="customer">
 	<div class="content-wrap">
 		<img src="../images/logo.PNG">
@@ -30,7 +30,9 @@
 					</label>
 				</li>
 				<li><a href="customer_cart.php" class="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-					<span style="font-size: 13px; margin-left: 3px;">0</span></a></li>
+					<span style="font-size: 13px; margin-left: 3px;" id="number_on_cart">
+						<?php echo "$number_on_cart"; ?>
+					</span></a></li>
 			</ul>
 		</div>	
 		<div class="acc-settings">
