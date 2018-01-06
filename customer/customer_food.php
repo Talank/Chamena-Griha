@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/clz_admin_home.css">
 
 	<script type="text/javascript" src="../js/global.js"></script>
-	<script type="text/javascript" src="../js/add_to_cart.js"></script>
+	<!-- <script type="text/javascript" src="../js/add_to_cart.js"></script> -->
 </head>
 <body>
 	<?php 
@@ -33,16 +33,16 @@
 					if($nums>0){
 						while($row=mysqli_fetch_array($result)){
 							echo"<div class=food-item>
-								<div class=row1>
-									<img src=../images/food/$row[photo]>
-								</div>
-								<div class=row2>
-									<h2>$row[name]</h2>
-									<span>$row[price]</span>
-									<input type=number name=food_id id=food_id value=$row[food_id] style='display: none'>
-									<a href=../process/add_to_cart.php?food_id=$row[food_id]>Add to cart</a>
-								</div>
-							</div>";
+									<div class=row1>
+										<img src=../images/food/$row[photo]>
+									</div>
+									<div class=row2>
+										<h2>$row[name]</h2>
+										<span>Rs. $row[price]</span>
+										<input type=number name=food_id id=food_id value=$row[food_id] style='display: none'>
+										<a href=../process/add_to_cart.php?food_id=$row[food_id]>Add to cart</a>
+									</div>
+								</div>";
 						}
 					}
 				?>

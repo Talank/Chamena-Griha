@@ -20,42 +20,65 @@
 <div class="container">
 	<div class="content-wrap">
 
-<div id="cart">
-	<h1>ITEMS ADDED TO CART</h1>
-	<div class="cart-box">
-		<div class="items-added">
-			
-			<div class="cart-item">
-				<img src="../images/food/burger.jpg">
-				<h2>Burger</h2>
-				<span>Rs: 15</span>
-			</div>
+		<div id="cart">
+			<h1>ITEMS ADDED TO CART</h1>
+			<div class="cart-box">
+				<div class="items-added">
 
-			<div class="cart-item">
-				<img src="../images/food/fries.jpg">
-				<h2>French Fries</h2>
-				<span>Rs: 100</span>
-			</div>
+					<?php 
+						include '../process/db_conn.php';
+						$u_id=$_SESSION['u_id'];
+						$total_price=0;
+						$query="select food_id,name, price, photo from food where food_id in (select food_id from cart where u_id=$u_id)";
+						$result=mysqli_query($conn,$query);
+						if ($result) {
+							$nums=mysqli_num_rows($result);
+							if($nums>0){
+								while($row=mysqli_fetch_array($result)){
+									$total_price += $row['price'];
+									echo"<div class=cart-item>
+											<img src=../images/food/$row[photo]>
+											<h2>$row[name]</h2>
+											<span>Rs: $row[price]</span>
+											<input type=number name=food_id id=food_id value=$row[food_id] style='display: none'>
+											<a href=../process/remove_from_cart.php?food_id=$row[food_id]>Remove</a>
+										</div>";
+								}
+							}	
+						}
+					 ?>
+				</div>
 
-			<div class="cart-item">
-				<img src="../images/beverage/dew.jpg">
-				<h2>Mountain Dew</h2>
-				<span>Rs: 40</span>
+				<script type="text/javascript">
+					//document.getElementById("serve_btn").style.display = none;
+					//startOrder();
+					function startOrder(x){
+						if (x.value=="Order") {
+							//document.getElementById("serve_btn").style.display = block;
+							document.getElementById('order_btn').style.visibility = 'hidden';
+							document.getElementById('serve_btn').style.visibility = 'visible';
+						}
+						// if (x.value=="Serve") {
+						// 	//document.getElementById("serve_btn").style.display.display = solid;
+						// }
+					}
+				</script>
+
+				<div class="total order serve">
+					<h2>Total: Rs <?php echo "$total_price"; ?></h2>
+					<!-- <form action="../process/order_process.php"> -->
+						<input type="submit" name="serve" value="Serve" id="serve_btn" onclick="startOrder(this)">
+						<input type="submit" name="order" value="Order" id="order_btn" onclick="startOrder(this)">
+					<!-- </form> -->
+					<!-- <form action="../process/order_process.php"> -->
+					<!-- </form> -->
+				</div>	
+				
 			</div>
 		</div>
-
-		<div class="total order serve">
-			<h2>Total: Rs 155</h2>
-			<input type="submit" name="order" value="Order">
-			<input type="submit" name="serve" value="Serve">
-		</div>
-
-		
-		
-	</div>
 	</div>
 </div>
-</div>
+
 <?php 
 	include('../footer.php');
  ?>
