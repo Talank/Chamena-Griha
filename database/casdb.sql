@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2018 at 10:38 AM
+-- Generation Time: Jan 06, 2018 at 03:33 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -89,20 +89,12 @@ INSERT INTO `canteen` (`u_id`, `phone`, `c_id`) VALUES
 --
 
 CREATE TABLE `cart` (
+  `item_id` int(6) NOT NULL,
   `u_id` int(10) NOT NULL,
-  `food_id` int(10) NOT NULL
+  `food_id` int(10) NOT NULL,
+  `quantity` int(2) NOT NULL,
+  `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`u_id`, `food_id`) VALUES
-(91, 8),
-(91, 9),
-(91, 11),
-(91, 12),
-(97, 8);
 
 -- --------------------------------------------------------
 
@@ -272,6 +264,12 @@ ALTER TABLE `canteen`
   ADD PRIMARY KEY (`c_id`);
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`item_id`);
+
+--
 -- Indexes for table `collegeadmin`
 --
 ALTER TABLE `collegeadmin`
@@ -328,6 +326,12 @@ ALTER TABLE `beverage`
 --
 ALTER TABLE `canteen`
   MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `item_id` int(6) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `collegeadmin`

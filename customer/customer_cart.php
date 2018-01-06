@@ -16,7 +16,9 @@
 <body>
 	<?php 
 	session_start();
-	include('customer_header.php'); ?>
+	include('customer_header.php'); 
+	include '../basic_functions.php';
+	?>
 <div class="container">
 	<div class="content-wrap">
 
@@ -35,11 +37,16 @@
 							$nums=mysqli_num_rows($result);
 							if($nums>0){
 								while($row=mysqli_fetch_array($result)){
-									$total_price += $row['price'];
+									$food_id=$row['food_id'];
+									$query2="select quantity,status from cart where u_id=$u_id and food_id=$food_id";
+									$result2=mysqli_query($conn,$query2);
+									$row2=mysqli_fetch_array($result2);
+
+									$total_price += ($row['price']*$row2['quantity']);
 									echo"<div class=cart-item>
 											<img src=../images/food/$row[photo]>
 											<h2>$row[name]</h2>
-											<span>Rs: $row[price]</span>
+											<span>Rs: $row[price] * $row2[quantity]</span>
 											<input type=number name=food_id id=food_id value=$row[food_id] style='display: none'>
 											<a href=../process/remove_from_cart.php?food_id=$row[food_id]>Remove</a>
 										</div>";
@@ -49,29 +56,40 @@
 					 ?>
 				</div>
 
-				<script type="text/javascript">
-					//document.getElementById("serve_btn").style.display = none;
+				<!-- <script type="text/javascript"> -->
+					<!-- //document.getElementById("serve_btn").style.display = none;
 					//startOrder();
 					function startOrder(x){
 						if (x.value=="Order") {
 							//document.getElementById("serve_btn").style.display = block;
 							document.getElementById('order_btn').style.visibility = 'hidden';
-							document.getElementById('serve_btn').style.visibility = 'visible';
+							//document.getElementById('serve_btn').style.visibility = 'visible';
 						}
 						// if (x.value=="Serve") {
 						// 	//document.getElementById("serve_btn").style.display.display = solid;
 						// }
-					}
-				</script>
-
+					// } -->
+				<!-- </script> -->
+				
 				<div class="total order serve">
 					<h2>Total: Rs <?php echo "$total_price"; ?></h2>
-					<!-- <form action="../process/order_process.php"> -->
-						<input type="submit" name="serve" value="Serve" id="serve_btn" onclick="startOrder(this)">
-						<input type="submit" name="order" value="Order" id="order_btn" onclick="startOrder(this)">
-					<!-- </form> -->
-					<!-- <form action="../process/order_process.php"> -->
-					<!-- </form> -->
+
+					<form action="../process/order_process.php" method="GET">
+						<input type="submit" name="serve" value="Serve" id="serve_btn">
+					</form>
+
+					<form action="../process/order_process.php" method="GET">
+						<input type="submit" name="order" value="Order" id="order_btn">
+					</form>
+
+					<?php
+
+						if (isset($_GET['order'])) 
+							echo "<script type=text/javascript>
+										document.getElementById('order_btn').style.visibility = 'hidden';
+									</script>";
+						
+					?>
 				</div>	
 				
 			</div>
