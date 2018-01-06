@@ -55,43 +55,31 @@
 						}
 					 ?>
 				</div>
-
-				<!-- <script type="text/javascript"> -->
-					<!-- //document.getElementById("serve_btn").style.display = none;
-					//startOrder();
-					function startOrder(x){
-						if (x.value=="Order") {
-							//document.getElementById("serve_btn").style.display = block;
-							document.getElementById('order_btn').style.visibility = 'hidden';
-							//document.getElementById('serve_btn').style.visibility = 'visible';
-						}
-						// if (x.value=="Serve") {
-						// 	//document.getElementById("serve_btn").style.display.display = solid;
-						// }
-					// } -->
-				<!-- </script> -->
 				
 				<div class="total order serve">
 					<h2>Total: Rs <?php echo "$total_price"; ?></h2>
 
-					<form action="../process/order_process.php" method="GET">
-						<input type="submit" name="serve" value="Serve" id="serve_btn">
-					</form>
-
-					<form action="../process/order_process.php" method="GET">
-						<input type="submit" name="order" value="Order" id="order_btn">
-					</form>
-
-					<?php
-
-						if (isset($_GET['order'])) 
-							echo "<script type=text/javascript>
-										document.getElementById('order_btn').style.visibility = 'hidden';
-									</script>";
-						
-					?>
+					<?php 
+						$query="select status from cart where u_id=$u_id";
+						$result = mysqli_query($conn, $query);		
+						$nums=mysqli_num_rows($result);
+						if($nums>0){
+							$status=0;
+							while ($row=mysqli_fetch_array($result)) {
+								$status += $row['status'];
+							}
+							if ($status==0) {
+								echo "<form action=../process/order_process.php method=GET>
+										<input type=submit name=order value=Order id=order_btn>
+									</form>";
+							}
+							else
+								echo "<form action=../process/serve_process.php method=GET>
+										<input type=submit name=serve value=Serve id=serve_btn>
+									</form>";
+						}
+				 	?>
 				</div>	
-				
 			</div>
 		</div>
 	</div>
