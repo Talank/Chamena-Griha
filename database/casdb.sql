@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2018 at 04:24 PM
+-- Generation Time: Jan 06, 2018 at 10:38 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -85,6 +85,28 @@ INSERT INTO `canteen` (`u_id`, `phone`, `c_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `u_id` int(10) NOT NULL,
+  `food_id` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`u_id`, `food_id`) VALUES
+(91, 8),
+(91, 9),
+(91, 11),
+(91, 12),
+(97, 8);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `collegeadmin`
 --
 
@@ -120,12 +142,12 @@ CREATE TABLE `food` (
 --
 
 INSERT INTO `food` (`food_id`, `name`, `price`, `photo`, `food_desc`) VALUES
-(8, 'parautha', 60, NULL, 'bwfbwuebfubwew'),
-(9, 'new', 76, NULL, 'asdfasfasdfw'),
-(10, 'buff momo', 70, NULL, 'it is a delicious food'),
-(11, 'Kabab', 100, NULL, 'it is just a food'),
-(12, 'erfwer', 434, NULL, 'sdfdfgdfgfgdfgd'),
-(15, 'sdfs', 76, 'Screenshot  (11).png', 'sdfsd desc');
+(8, 'parautha', 60, 'parautha.jpg', 'bwfbwuebfubwew'),
+(9, 'Pakauda', 50, 'pakauda.jpg', 'asdfasfasdfw'),
+(10, 'Momo', 100, 'momo.jpg', 'it is a delicious food'),
+(11, 'Wings', 200, 'wings.jpg', 'it is just a food'),
+(12, 'Samosa', 50, 'samosa.jpg', 'sdfdfgdfgfgdfgd'),
+(15, 'Veg Nepali Thali', 150, 'veg_nepalithali.jpg', 'sdfsd desc');
 
 -- --------------------------------------------------------
 
