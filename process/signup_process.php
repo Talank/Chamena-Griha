@@ -16,7 +16,7 @@
 		$email = $conn->real_escape_string($_POST['email']);
 		$password=md5($password);
 
-		$food_pic=$_FILES["userPic"]["name"];
+		$user_pic=$_FILES["userPic"]["name"];
 		$target_dir = "../images/users/";
 		$target_file = $target_dir . basename($_FILES["userPic"]["name"]);
 		$uploadOk = 1;

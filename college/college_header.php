@@ -5,6 +5,8 @@
 		include_once('../basic_functions.php');
  ?>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 <style>
 	body {
 		margin: 0;
@@ -32,8 +34,12 @@
 			<ul>
 				<li><a href="../index.php" class="cool-links">Home</a></li>
 				<li><label class="search-box">
-						<input type="text" name="search" placeholder="Search" class="search">
-						<i class="fa fa-search" aria-hidden="true"></i>
+					
+							<input type="text" name="search" placeholder="Search" class="search"sss>
+							<button style="background-color: #ff713f; box-shadow: 0px; border-color: #ff713f; border-style: none;">
+								<i class="fa fa-search" aria-hidden="true" style="color: #fff;"></i>
+							</button>
+						
 					</label>
 				</li>
 			</ul>

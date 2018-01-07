@@ -15,7 +15,6 @@
 				$result2 = mysqli_query($conn, $query2);
 			}
 			redirect_to("../customer/customer_home.php?serve_success");
-		//redirect_to("remove_from_cart.php?food_id=$food_id");
 		}
 	}
  ?>

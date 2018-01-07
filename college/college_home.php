@@ -21,14 +21,15 @@
  
 <section class="container">
 	<div class="content-wrap">
-	
-
-<?php 
-	echo "this is college admin home page";
- ?>
-</div>
+		<div id="id1">
+			
+		</div>
+	</div>
 
  </section>
+ 
+ <script type="text/javascript" src="../js/search_user.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
  <?php 
 	include('../footer.php');
  ?>

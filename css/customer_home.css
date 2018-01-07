@@ -201,7 +201,7 @@ li {
 	position: relative;
 	display: inline-block;
 }
-.cart-box input[name="order"], .cart-box input[name="serve"] {
+.cart-box form input[name="order"], .cart-box form input[name="serve"] {
 	display: inline-block;
 	position: absolute;
 	right: 0;
@@ -217,18 +217,18 @@ li {
 
 }
 
-.cart-box input[name="order"] {
+.cart-box form input[name="order"] {
 	background: #b72c2c
 }
 
-.cart-box input[name="serve"] {
+.cart-box form input[name="serve"] {
 	background: #26a837;
 }
 
-.cart-box input[name="order"]:hover {
+.cart-box form input[name="order"]:hover {
 	background: #931a1a;
 }
 
- .cart-box input[name="serve"]:hover {
+ .cart-box form input[name="serve"]:hover {
  	background: #238e31;
  }
