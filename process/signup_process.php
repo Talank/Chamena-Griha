@@ -17,10 +17,11 @@
 		$password=md5($password);
 
 		$user_pic=$_FILES["userPic"]["name"];
+		$user_pic= str_replace(' ', '%20', $user_pic);
 		$target_dir = "../images/users/";
-		$target_file = $target_dir . basename($_FILES["userPic"]["name"]);
+		$target_file = $target_dir . basename($user_pic);
 		$uploadOk = 1;
-		$imageFileType =strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+		$imageFileType =strtolower(pathinfo($_FILES["userPic"]["name"],PATHINFO_EXTENSION));
 		// Check if image file is a actual image or fake image
 		$check = getimagesize($_FILES["userPic"]["tmp_name"]);
 	    if($check) {
@@ -132,6 +133,8 @@
 							}
 
 							else{
+								$query = "delete from user where u_id = $u_id";
+								$result = mysqli_query($conn, $query);
 								redirect_to("../signup.php?process=failed_while_adding");
 							}
 						}

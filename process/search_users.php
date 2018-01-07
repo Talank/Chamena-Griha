@@ -22,8 +22,8 @@
 					</thead><tbody>';
 
 					while($row=mysqli_fetch_array($result)){
-						$pic_name=urlencode($row['photo']);
-						$photo= str_replace(' ', '%20', '../images/users/$pic_name');
+						$photo=urlencode($row['photo']);
+						//$photo= str_replace(' ', '%20', '../images/users/$pic_name');
 						echo "<tr>";
 								echo"<td>$row[first_name] $row[last_name]</td>";
 								echo"<td><img src=../images/users/$photo></td>";
