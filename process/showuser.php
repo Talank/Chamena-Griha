@@ -1,9 +1,9 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Show User</title>
 </head>
-<body> -->
+<body>
 	<?php 
 		if (isset($_GET['id'])) {
 			include_once '../basic_functions.php';
@@ -56,7 +56,7 @@
 							$row2 = mysqli_fetch_array($result2);
 
 							echo "<div>
-								 	AMOUNT: $row2[amount]
+								 	AMOUNT: $row2[amount] <br>
 								 </div>";
 								 	
 						}
@@ -66,24 +66,38 @@
 			}
 		}
 	 ?>
-	 <!-- INSERT THE HTML CODE FOR DISPLAYING USER INFO 
-	 	THE INFO CONTAINS PHOTO NAME, REG NUM, AMOUNT TO PAY,AMOUNT PAID, DUE AND A OPTION TO PRINT BILL -->
-	 <!-- <div>
+	 
+	 <form method="POST" action="make_payment.php">
 	 	<div>
-	 		<img src=../images/users/$row[photo]>
-	 	</div>
+			<label>AMOUNT TO PAY:</label>
+			<input class="form-control"  type="number" name="amount" id="amount" value="<?php echo $row[amount]; ?>" readonly>
+		</div>
+
 	 	<div>
-	 		<p>NAME: $row[first_name] $row[last_name]</p>
-	 	</div>
-	 	
-	 	if($type==0){
-	 		<div>
-	 			REGESTRATION #: $row[reg_id]
-	 		</div>
-	 	}
-	 	<div>
-	 		AMOUNT: $row2['amount']
-	 	</div>
-	 </div> -->
-<!-- </body>
-</html> -->
+	 	<label>AMOUNT PAID:</label>
+		<input class="form-control" type="number" name="tender" id="tender" oninput="showDueAmount()">
+	 </div>
+
+
+	 <div>
+				<label>CURRENT DUE AMOUNT: </label>
+				<input class="form-control" type="number" name="dueAmount" id="dueAmount" readonly>
+			</div>
+
+
+		<input type="number" name="u_id" style="display: none" value="<?php echo '$u_id'; ?>">
+
+	<input type="submit" name="update" value="update">
+	 </form>
+	</body>
+</html>
+<script type="text/javascript">
+	function showDueAmount(){
+			var enteredAmount= document.getElementById("tender").value;
+			var amount= document.getElementById("amount").value;
+			var dueAmount = amount - enteredAmount;
+			if(dueAmount<0)//There is no due and the money is excess
+				dueAmount=0;
+			document.getElementById("dueAmount").value = dueAmount;
+		}
+</script>

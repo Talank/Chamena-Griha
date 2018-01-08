@@ -22,11 +22,11 @@
 					</thead><tbody>';
 
 					while($row=mysqli_fetch_array($result)){
-						$photo=urlencode($row['photo']);
+						//$photo=urlencode($row['photo']);
 						//$photo= str_replace(' ', '%20', '../images/users/$pic_name');
 						echo "<tr>";
 								echo"<td>$row[first_name] $row[last_name]</td>";
-								echo"<td><img src=../images/users/$photo></td>";
+								echo"<td><img src=../images/users/$row[photo]></td>";
 								echo"<td><a href=../process/showuser.php?id=$row[u_id]>Select</a></td>";
 							echo"</tr>";
 					}
