@@ -70,7 +70,7 @@
 	 <form method="POST" action="make_payment.php">
 	 	<div>
 			<label>AMOUNT TO PAY:</label>
-			<input class="form-control"  type="number" name="amount" id="amount" value="<?php echo $row[amount]; ?>" readonly>
+			<input class="form-control"  type="number" name="amount" id="amount">
 		</div>
 
 	 	<div>
@@ -85,7 +85,7 @@
 			</div>
 
 
-		<input type="number" name="u_id" style="display: none" value="<?php echo '$u_id'; ?>">
+		<input type="hidden" name="u_id" value="<?php echo $u_id; ?>">
 
 	<input type="submit" name="update" value="update">
 	 </form>
