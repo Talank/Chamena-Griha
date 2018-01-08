@@ -77,13 +77,14 @@
 					<h2>Total: Rs <?php echo "$total_price"; ?></h2>
 
 					<?php 
-						$query="select status from cart where u_id=$u_id";
+						$query="select * from cart where u_id=$u_id";
 						$result = mysqli_query($conn, $query);		
 						$nums=mysqli_num_rows($result);
 						if($nums>0){
-							$status=0;
+							//$status;
 							while ($row=mysqli_fetch_array($result)) {
-								$status += $row['status'];
+								$status = $row['status'];
+								echo "$status";
 							}
 							if ($status==0) {
 								echo "<form action=../process/order_process.php method=GET>
@@ -92,7 +93,6 @@
 							}
 							else
 								echo "<form action=../process/serve_process.php method=GET>
-										<input type=hidden name=u_id id=u_id value=$u_id>
 										<input type=submit name=serve value=Serve id=serve_btn>
 									</form>";
 						}
