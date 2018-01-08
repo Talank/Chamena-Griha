@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2018 at 03:33 PM
+-- Generation Time: Jan 08, 2018 at 12:20 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -41,13 +41,15 @@ CREATE TABLE `account` (
 INSERT INTO `account` (`account_no`, `amount`, `u_id`) VALUES
 (55, 0, 93),
 (54, 0, 92),
-(53, 0, 91),
+(53, 270, 91),
 (52, 0, 90),
 (56, 0, 94),
 (57, 0, 95),
 (58, 0, 96),
-(59, 0, 97),
-(60, 0, 98);
+(59, 60, 97),
+(60, 0, 98),
+(61, 0, 99),
+(68, 0, 106);
 
 -- --------------------------------------------------------
 
@@ -96,6 +98,14 @@ CREATE TABLE `cart` (
   `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`item_id`, `u_id`, `food_id`, `quantity`, `status`) VALUES
+(3, 91, 8, 1, 1),
+(4, 91, 9, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -139,7 +149,10 @@ INSERT INTO `food` (`food_id`, `name`, `price`, `photo`, `food_desc`) VALUES
 (10, 'Momo', 100, 'momo.jpg', 'it is a delicious food'),
 (11, 'Wings', 200, 'wings.jpg', 'it is just a food'),
 (12, 'Samosa', 50, 'samosa.jpg', 'sdfdfgdfgfgdfgd'),
-(15, 'Veg Nepali Thali', 150, 'veg_nepalithali.jpg', 'sdfsd desc');
+(15, 'Veg Nepali Thali', 150, 'veg_nepalithali.jpg', 'sdfsd desc'),
+(16, 'Chaat', 50, 'chaat.jpg', 'this is chaat'),
+(17, 'Fries', 80, 'fries.jpg', 'this is fries'),
+(18, 'Nepali Thali', 100, 'nepalithali.jpg', 'this is Nepali Thali');
 
 -- --------------------------------------------------------
 
@@ -180,9 +193,7 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`reg_id`, `first_name`, `last_name`, `u_id`, `photo`, `account_no`, `phone`, `gender`) VALUES
-(656565656, 'Talank', 'Baral', 83, '', 46, 7898789789, NULL),
-(456123456, 'Madan', 'Poudel', 87, '', 50, 7755845586, NULL),
-(55459898731, 'Prajwal', 'Adhikari', 88, '', 51, 9810256647, NULL),
+(784, 'Zena', 'Poudel', 106, 'Zena%20Poudel.JPG', 68, 9845567412, 'female'),
 (789, 'Madan', 'Poudel', 90, '', 52, 45654458789, 'male'),
 (385, 'Talank', 'Baral', 91, '', 53, 9840010300, 'male'),
 (6511223, 'Ashish', 'Shrestha', 92, '', 54, 9806627492, 'male'),
@@ -235,11 +246,12 @@ INSERT INTO `user` (`u_id`, `username`, `password`, `type`, `email`, `forgot_pw_
 (89, 'college123', '5f4dcc3b5aa765d61d8327deb882cf99', 3, 'gces@gces.edu.np', NULL),
 (90, 'Maddy123', 'maddy123', 0, 'madan@gces.edu.np', 'gf3yk016z8imdv5'),
 (93, 'elton_aasis123', 'elton123', 0, 'aashishshrestha5532@gmail.com', 'osig08twfbuhr3n'),
-(94, 'prajwal', 'prajwal123', 0, 'prajwal.ady@gmail.com', NULL),
+(94, 'prajwal123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'prajwal.ady@gmail.com', NULL),
 (95, 'bibek123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'bibek@gmail.com', NULL),
 (96, 'Ajit123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'ajit@gmail.com', NULL),
 (97, 'Anchal123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'anchal@gmail.com', NULL),
-(98, 'Apil123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'apil@gmail.com', NULL);
+(98, 'Apil123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'apil@gmail.com', NULL),
+(106, 'Zena123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'zena@gmail.com', NULL);
 
 --
 -- Indexes for dumped tables
@@ -313,7 +325,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `account_no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `account_no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `beverage`
@@ -331,7 +343,7 @@ ALTER TABLE `canteen`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `item_id` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `item_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `collegeadmin`
@@ -343,7 +355,7 @@ ALTER TABLE `collegeadmin`
 -- AUTO_INCREMENT for table `food`
 --
 ALTER TABLE `food`
-  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `other`
@@ -361,7 +373,7 @@ ALTER TABLE `teacher`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

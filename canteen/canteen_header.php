@@ -27,7 +27,7 @@
 						<i class="fa fa-search" aria-hidden="true"></i>
 					</label>
 				</li>
-				<li><a href="#" class="cart"><i id="addItems" class="fa fa-bell-o" aria-hidden="true"></i></a></li>
+				<li><a href="" class="cart"><i id="addItems" class="fa fa-bell-o" aria-hidden="true"></i></a></li>
 			</ul>
 		</div>	
 		<div class="acc-settings">
@@ -49,3 +49,6 @@
 		
 	</div>
 </header>
+
+<script type="text/javascript" src="../js/send_notification.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

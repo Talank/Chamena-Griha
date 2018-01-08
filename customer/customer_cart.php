@@ -79,6 +79,7 @@
 									</form>";
 						}
 				 	?>
+				 	<input type="hidden" name="u_id" id="u_id" value="<?php echo $u_id; ?>">
 				</div>	
 			</div>
 		</div>
@@ -88,3 +89,6 @@
 <?php 
 	include('../footer.php');
  ?>
+
+ <script type="text/javascript" src="../js/send_notification.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
