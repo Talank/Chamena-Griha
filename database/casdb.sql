@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2018 at 12:20 PM
+-- Generation Time: Jan 08, 2018 at 06:16 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -95,16 +95,18 @@ CREATE TABLE `cart` (
   `u_id` int(10) NOT NULL,
   `food_id` int(10) NOT NULL,
   `quantity` int(2) NOT NULL,
-  `status` int(1) NOT NULL
+  `status` int(1) NOT NULL,
+  `update_date` date NOT NULL,
+  `update_time` time NOT NULL,
+  `clock` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`item_id`, `u_id`, `food_id`, `quantity`, `status`) VALUES
-(3, 91, 8, 1, 1),
-(4, 91, 9, 1, 1);
+INSERT INTO `cart` (`item_id`, `u_id`, `food_id`, `quantity`, `status`, `update_date`, `update_time`, `clock`) VALUES
+(22, 91, 10, 1, 0, '2018-01-08', '10:43:54', 'pm');
 
 -- --------------------------------------------------------
 
@@ -136,23 +138,25 @@ CREATE TABLE `food` (
   `name` varchar(20) DEFAULT NULL,
   `price` float NOT NULL,
   `photo` varchar(50) DEFAULT NULL,
-  `food_desc` varchar(250) DEFAULT NULL
+  `food_desc` varchar(250) DEFAULT NULL,
+  `type` varchar(8) NOT NULL,
+  `featured` int(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `food`
 --
 
-INSERT INTO `food` (`food_id`, `name`, `price`, `photo`, `food_desc`) VALUES
-(8, 'parautha', 60, 'parautha.jpg', 'bwfbwuebfubwew'),
-(9, 'Pakauda', 50, 'pakauda.jpg', 'asdfasfasdfw'),
-(10, 'Momo', 100, 'momo.jpg', 'it is a delicious food'),
-(11, 'Wings', 200, 'wings.jpg', 'it is just a food'),
-(12, 'Samosa', 50, 'samosa.jpg', 'sdfdfgdfgfgdfgd'),
-(15, 'Veg Nepali Thali', 150, 'veg_nepalithali.jpg', 'sdfsd desc'),
-(16, 'Chaat', 50, 'chaat.jpg', 'this is chaat'),
-(17, 'Fries', 80, 'fries.jpg', 'this is fries'),
-(18, 'Nepali Thali', 100, 'nepalithali.jpg', 'this is Nepali Thali');
+INSERT INTO `food` (`food_id`, `name`, `price`, `photo`, `food_desc`, `type`, `featured`) VALUES
+(8, 'parautha', 60, 'parautha.jpg', 'bwfbwuebfubwew', 'food', 0),
+(9, 'Pakauda', 50, 'pakauda.jpg', 'asdfasfasdfw', 'food', 0),
+(10, 'Momo', 100, 'momo.jpg', 'it is a delicious food', 'food', 1),
+(11, 'Wings', 200, 'wings.jpg', 'it is just a food', 'food', 0),
+(12, 'Samosa', 50, 'samosa.jpg', 'sdfdfgdfgfgdfgd', 'food', 1),
+(15, 'Veg Nepali Thali', 150, 'veg_nepalithali.jpg', 'sdfsd desc', 'food', 0),
+(16, 'Chaat', 50, 'chaat.jpg', 'this is chaat', 'food', 1),
+(17, 'Fries', 80, 'fries.jpg', 'this is fries', 'food', 0),
+(18, 'Nepali Thali', 100, 'nepalithali.jpg', 'this is Nepali Thali', 'food', 1);
 
 -- --------------------------------------------------------
 
@@ -343,7 +347,7 @@ ALTER TABLE `canteen`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `item_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `item_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `collegeadmin`

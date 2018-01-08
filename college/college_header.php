@@ -51,7 +51,7 @@
 			// include('process/fname.php');
 			// echo"$firstname";
 			 ?>-->
-			 	Prajwal</span>
+			 	College</span>
 				<i  onclick="myFunction()" class="fa fa-user-o dropbtn" aria-hidden="true"></i>
 			</label>
 			<div id="myMenu" class="menu">

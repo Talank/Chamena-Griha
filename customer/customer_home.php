@@ -47,38 +47,24 @@
     
 		<div class="featured">
 			<p>Featured</p>
-			<div id="chicken-momo" class="item">
-				<span>Chicken Momo</span>
-				<img src="../images/food/momo.jpg">
-				<span>Price: Rs 120</span>
-				<a href="#">Add to cart</a>
-			</div>
-			<div id="chicken-chowmein" class="item">
-				<span>Chicken Chowmein</span>
-				<img src="../images/food/nonveg_chowmein.jpg">
-				<span>Price: Rs 120</span>
-				<a href="#">Add to cart</a>
-			</div>
-			<div id="samosa" class="item">
-				<span>Samosa</span>
-				<img src="../images/food/samosa.jpg">
-				<span>Price: Rs 15 (per pc)</span>
-				<a href="#">Add to cart</a>
-			</div>
-			<div id="chaat" class="item">
-				<span>Chaat</span>
-				<img src="../images/food/chaat.jpg">
-				<span>Price: Rs 70</span>
-				<a href="#">Add to cart</a>
-			</div>
+
+			<?php 
+				$query="select food_id,name, price, photo, type from food where featured=1";
+				$result=mysqli_query($conn,$query);
+				$nums=mysqli_num_rows($result);
+				if($nums>0){
+					while($row=mysqli_fetch_array($result)){
+						echo "<div id=$row[name] class=item>
+								<span>$row[name]</span>
+								<img src=../images/$row[type]/$row[photo]>
+								<span>Price: Rs $row[price]</span>
+								<input type=number name=food_id id=food_id value=$row[food_id] style='display: none'>
+								<a href=../process/add_to_cart.php?food_id=$row[food_id]>Add to cart</a>
+							</div>";
+					}
+				}
+			?>
 		</div>
-
-		<!-- <?php 
-		// include_once('customer_food.php');
-		// include_once('customer_beverage.php');
-		// include_once('customer_cart.php');
-		?> -->
-
  	</div>
 </div>
 </section>

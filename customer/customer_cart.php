@@ -1,3 +1,20 @@
+<?php 
+ 	if (isset($_GET['msg'])) {
+ 		$msg=$_GET['msg'];
+ 		
+ 		if ($msg=="add_not_success_time") {
+ 			echo "<script type=text/javascript>
+		 		if (confirm('Can't order between 9AM-12PM) == true) {
+			        window.location.href = '../index.php';
+			    } else {
+			        window.location.href = '../index.php';
+			    }
+		 	</script>";
+ 		}
+ 		
+	}
+  ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,11 +92,12 @@
 							}
 							else
 								echo "<form action=../process/serve_process.php method=GET>
+										<input type=hidden name=u_id id=u_id value=$u_id>
 										<input type=submit name=serve value=Serve id=serve_btn>
 									</form>";
 						}
 				 	?>
-				 	<input type="hidden" name="u_id" id="u_id" value="<?php echo $u_id; ?>">
+				 	
 				</div>	
 			</div>
 		</div>
@@ -90,5 +108,62 @@
 	include('../footer.php');
  ?>
 
- <script type="text/javascript" src="../js/send_notification.js"></script>
+<!--  <script type="text/javascript" src="../js/send_notification.js"></script> -->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+ <script>
+$(document).ready(function(){
+ 
+ function load_unseen_notification(view = '')
+ {
+  $.ajax({
+   url:"fetch.php",
+   method:"POST",
+   data:{view:view},
+   dataType:"json",
+   success:function(data)
+   {
+    $('.dropdown-menu').html(data.notification);
+    if(data.unseen_notification > 0)
+    {
+     $('.count').html(data.unseen_notification);
+    }
+   }
+  });
+ }
+ 
+ load_unseen_notification();
+ 
+ $('#comment_form').on('submit', function(event){
+  event.preventDefault();
+  if($('#subject').val() != '' && $('#comment').val() != '')
+  {
+   var form_data = $(this).serialize();
+   $.ajax({
+    url:"insert.php",
+    method:"POST",
+    data:form_data,
+    success:function(data)
+    {
+     $('#comment_form')[0].reset();
+     load_unseen_notification();
+    }
+   });
+  }
+  else
+  {
+   alert("Both Fields are Required");
+  }
+ });
+ 
+ $(document).on('click', '.dropdown-toggle', function(){
+  $('.count').html('');
+  load_unseen_notification('yes');
+ });
+ 
+ setInterval(function(){ 
+  load_unseen_notification();; 
+ }, 5000);
+ 
+});
+</script>

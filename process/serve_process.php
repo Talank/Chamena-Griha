@@ -67,9 +67,24 @@
 		$u_id=$_POST['id'];
 
 
-		echo "2";
+		echo "two";
+	}
+	if ($_GET['serve']) {
+		$u_id=$_SESSION['u_id'];
+		$query="select * from cart where u_id=$u_id";
+		$result = mysqli_query($conn, $query);		
+		$nums=mysqli_num_rows($result);
+		if($nums>0){
+			while($row=mysqli_fetch_array($result)){
+				$food_id=$row['food_id'];
+				// $query2="delete from `cart` where u_id=$u_id and food_id=$food_id";
+				// $result2 = mysqli_query($conn, $query2);
+				
+			}
+			redirect_to("../customer/customer_home.php?serve_success");
+		}
 	}
  ?>
 
-<script type="text/javascript" src="../js/send_notification.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="../js/send_notification.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->

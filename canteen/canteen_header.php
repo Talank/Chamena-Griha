@@ -27,17 +27,17 @@
 						<i class="fa fa-search" aria-hidden="true"></i>
 					</label>
 				</li>
-				<li><a href="" class="cart"><i id="addItems" class="fa fa-bell-o" aria-hidden="true"></i></a></li>
+				<li><a href="" class="cart"><i id="addItems" class="fa fa-bell-o" aria-hidden="true">
+					<span style="font-size: 13px; margin-left: 3px;" id="number_on_cart">
+						<!-- <?php //echo "$number_on_cart"; ?> -->
+					</span>
+				</i></a></li>
 			</ul>
 		</div>	
 		<div class="acc-settings">
 			 <label class="acc">
 			 	<span style="color: #fff;">
-			 	<!-- <?php  
-			// include('process/fname.php');
-			// echo"$firstname";
-			 ?>-->
-			 	Prajwal</span>
+			 	Canteen</span>
 				<i  onclick="myFunction()" class="fa fa-user-o dropbtn" aria-hidden="true"></i>
 			</label>
 			<div id="myMenu" class="menu">
@@ -50,5 +50,27 @@
 	</div>
 </header>
 
-<script type="text/javascript" src="../js/send_notification.js"></script>
+<!-- <script type="text/javascript" src="../js/send_notification.js"></script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		function load_unseen_notification(view = '')
+		{
+			$.ajax({
+				url:"../process/fetch_serve.php",
+				method:"POST",
+				data:{view:view},
+				dataType:"json",
+				success:function(data)
+				{
+					//$('.dropdown-menu').html(data.notification);
+					if(data.unseen_notification > 0)
+					{
+						$('#number_on_cart').html(data.unseen_notification);
+					}
+				}
+			});
+		}
+	}
+</script>

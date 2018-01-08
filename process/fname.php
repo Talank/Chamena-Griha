@@ -12,7 +12,7 @@ else
 
 $u_id= $_SESSION['u_id'];
 
-$query = "select * from `{$table}` where u_id =$u_id";
+$query = "select first_name from `{$table}` where u_id =$u_id";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_array($result);
 $firstname = $row['first_name'];
