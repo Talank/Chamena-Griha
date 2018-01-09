@@ -20,16 +20,15 @@
 		<div class="nav-canteen">
 			<ul>
 				<li><a href="../index.php" class="cool-links">Home</a></li>
-				<li><a href="#" class="cool-links">Food</a></li>
-				<li><a href="#" class="cool-links">Beverage</a></li>
+				<li><a href="canteen_food.php" class="cool-links">Food</a></li>
+				<li><a href="canteen_beverage.php" class="cool-links">Beverage</a></li>
 				<li><label class="search-box">
 						<input type="text" name="search" placeholder="Search" class="search">
 						<i class="fa fa-search" aria-hidden="true"></i>
 					</label>
 				</li>
-				<li><a href="" class="cart"><i id="addItems" class="fa fa-bell-o" aria-hidden="true">
+				<li><a href="canteen_notification.php" class="notification"><i id="addItems" class="fa fa-bell-o" aria-hidden="true">
 					<span style="font-size: 13px; margin-left: 3px;" id="number_on_notification">
-						<!-- <?php //echo "$number_on_cart"; ?> -->
 					</span>
 				</i></a></li>
 			</ul>
