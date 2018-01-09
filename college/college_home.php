@@ -21,13 +21,25 @@
  
 <section class="container">
 	<div class="content-wrap">
-		<div id="id1">
-			
+		<div class="clz">
+			<img src="../images/admin.png">
+			<label class="clz-search-box">	
+				<input type="text" name="search" placeholder="Search" class="clz-search">
+
+				<button style=" background-color: #e9f9e8; box-shadow: 0px; border-color: #ff713f; border-style: none;">
+					<i class="fa fa-search" aria-hidden="true" style="color: #b0b4ba;"></i>
+				</button>		
+
+			</label>
+			<div id="id1"></div>
 		</div>
 	</div>
-
+	<style type="text/css">
+		.container {
+			min-height: 500px;
+		}
+	</style>
  </section>
- 
  <script type="text/javascript" src="../js/search_user.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
  <?php 

@@ -22,11 +22,12 @@ header, footer {
 .container {
 	width: 100%;
 	background: #e9f9e8;
+	background: cover;
 }
 
 .content-wrap {
 	position: relative;
-	margin: auto;
+	margin: 0 auto;
 	max-width: 70%;
 }
 

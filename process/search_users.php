@@ -27,7 +27,7 @@
 						echo "<tr>";
 								echo"<td>$row[first_name] $row[last_name]</td>";
 								echo"<td><img src=../images/users/$row[photo]></td>";
-								echo"<td><a href=../process/showuser.php?id=$row[u_id]>Select</a></td>";
+								echo"<td><label><a href=../process/showuser.php?id=$row[u_id]>Select</a></label></td>";
 							echo"</tr>";
 					}
 
