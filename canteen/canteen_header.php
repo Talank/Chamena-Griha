@@ -30,6 +30,16 @@
 				<li><a href="canteen_notification.php" class="cart"><i id="addItems" class="fa fa-bell-o" aria-hidden="true">
 					<span style="font-size: 13px; margin-left: 3px;" id="number_on_notification">
 						<!-- <?php //echo "$number_on_cart"; ?> -->
+						<?php 
+							include'../process/db_conn.php';
+							$query= "select distinct u_id from cart where status=2";
+							$result= mysqli_query($conn, $query);
+							if ($result) {
+								$nums=mysqli_num_rows($result);
+								$row= mysqli_fetch_array($result);
+								echo "$nums";
+							}
+						 ?>
 					</span>
 				</i></a></li>
 			</ul>
