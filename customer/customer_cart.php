@@ -84,7 +84,6 @@
 							//$status;
 							while ($row=mysqli_fetch_array($result)) {
 								$status = $row['status'];
-								echo "$status";
 							}
 							if ($status==0) {
 								echo "<form action=../process/order_process.php method=GET>

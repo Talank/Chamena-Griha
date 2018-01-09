@@ -28,7 +28,7 @@
 					</label>
 				</li>
 				<li><a href="" class="cart"><i id="addItems" class="fa fa-bell-o" aria-hidden="true">
-					<span style="font-size: 13px; margin-left: 3px;" id="number_on_cart">
+					<span style="font-size: 13px; margin-left: 3px;" id="number_on_notification">
 						<!-- <?php //echo "$number_on_cart"; ?> -->
 					</span>
 				</i></a></li>
@@ -54,23 +54,40 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <script type="text/javascript">
-	$(document).ready(function(){
-		function load_unseen_notification(view = '')
-		{
-			$.ajax({
-				url:"../process/fetch_serve.php",
-				method:"POST",
-				data:{view:view},
-				dataType:"json",
-				success:function(data)
-				{
-					//$('.dropdown-menu').html(data.notification);
-					if(data.unseen_notification > 0)
-					{
-						$('#number_on_cart').html(data.unseen_notification);
-					}
-				}
-			});
-		}
-	}
+	(function worker() {
+	  $.ajax({
+	    url: '../process/fetch_serve.php', 
+	    method:"POST",
+	    //data:{view:view},
+	    dataType:"json",
+	    success: function(data) {
+	      $('#number_on_cart').html(data.unseen_notification);
+	    },
+	    complete: function() {
+	      // Schedule the next request when the current one's complete
+	      setTimeout(worker, 5000);
+	    }
+	  });
+	})();
+	worker();
+
+	// $(document).ready(function(){
+	// 	function load_unseen_notification(view = '')
+	// 	{
+	// 		$.ajax({
+	// 			url:"../process/fetch_serve.php",
+	// 			method:"POST",
+	// 			data:{view:view},
+	// 			dataType:"json",
+	// 			success:function(data)
+	// 			{
+	// 				//$('.dropdown-menu').html(data.notification);
+	// 				if(data.unseen_notification > 0)
+	// 				{
+	// 					$('#number_on_cart').html(data.unseen_notification);
+	// 				}
+	// 			}
+	// 		});
+	// 	}
+	// }
 </script>
