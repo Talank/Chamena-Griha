@@ -69,6 +69,13 @@
 	include('customer_header.php'); 
 	include '../basic_functions.php';
 	?>
+
+<style type="text/css">
+		.container {
+			min-height: 500px;
+		}
+</style>
+	
 <div class="container">
 	<div class="content-wrap">
 
