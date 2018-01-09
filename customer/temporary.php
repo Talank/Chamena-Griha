@@ -1,5 +1,9 @@
 
 <?php 
+	$date=date_create($row2['duedate']);
+	$todayDate=date_create(date('y-m-d',time()));
+
+	
 	include_once  'process/db_conn.php';
 
 	if (isset($_SESSION['u_id'])) {

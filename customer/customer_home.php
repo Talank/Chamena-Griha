@@ -1,3 +1,29 @@
+<?php 
+	session_start();
+	if (isset($_GET['msg'])) {
+ 		$msg=$_GET['msg'];		
+ 		if ($msg=="add_after_order") {
+ 			echo"<script type='text/javascript'>
+					if (confirm('Can\'t add to cart after order has been placed') == true) {
+						        window.location.href = 'customer_cart.php';
+						    } else {
+						        window.location.href = 'customer_cart.php';
+						    }
+				</script>";
+		}
+	}
+
+	include'../process/db_conn.php';
+	$u_id=$_SESSION['u_id'];
+	$query="select distinct(update_date) as previous_order from cart where u_id=$u_id and status=1";
+	$result=mysqli_query($conn,$query);
+	if ($result) {
+		$row=mysqli_fetch_array($result);
+		$date=date_create($row['previous_order']);
+		$todayDate=date_create(date('y-m-d',time()));
+	}
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +40,6 @@
 </head>
 <body>
 <?php
-	session_start();
 	include('customer_header.php');
 ?>
 <section class="container">
