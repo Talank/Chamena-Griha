@@ -137,6 +137,7 @@ li {
 	position: relative;
 	display: inline-block;
 	margin-bottom: 20px;
+	margin-right: 10px;
 	height: 450px;
 	width: 49%;	
 	border: 1px solid #aaacaf;

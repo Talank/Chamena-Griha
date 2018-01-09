@@ -23,6 +23,7 @@
 
 		<div id="food" >
 			<h1 style="display: inline-block;">FOOD ITEM LIST</h1>
+			<button class="add-item-btn">Add Item</button>
 
 			<div class="food-menu">
 				<?php 
@@ -40,7 +41,7 @@
 										<h2>$row[name]</h2>
 										<span>Rs. $row[price]</span>
 										<input type=number name=food_id id=food_id value=$row[food_id] style='display: none'>
-										<a href=../process/add_to_cart.php?food_id=$row[food_id]>Add to cart</a>
+										<a href=../process/add_to_cart.php?food_id=$row[food_id]>Delete Item</a>
 									</div>
 								</div>";
 						}
