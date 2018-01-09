@@ -36,7 +36,7 @@
 	</div>
 	<style type="text/css">
 		.container {
-			min-height: 500px;
+			min-height: 520px;
 		}
 	</style>
  </section>

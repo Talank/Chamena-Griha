@@ -22,7 +22,7 @@
 	<div class="content-wrap">
 
 		<div id="food" >
-			<h1>FOOD ITEM LIST</h1>
+			<h1 style="display: inline-block;">FOOD ITEM LIST</h1>
 
 			<div class="food-menu">
 				<?php 

@@ -12,6 +12,13 @@
 	<link rel="stylesheet" type="text/css" href="../css/clz_admin_home.css">
 	<script type="text/javascript" src="../js/global.js"></script>
 </head>
+
+<style type="text/css">
+		.container {
+			min-height: 520px;
+		}
+</style>
+
 <body>
 
 <?php
@@ -21,6 +28,12 @@
 
 <section class="container">
 			<div class="content-wrap">
+
+				<div class="no-notification">
+		  			<img src=../images/no-notification.png>
+		  			<h1>No Notifications</h1>
+		  		</div>
+
 				<?php 
 					include'../process/db_conn.php';
 					$query= "select distinct(u_id),update_time, clock from cart where status=2";

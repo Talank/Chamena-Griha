@@ -20,9 +20,8 @@
 	include('customer_header.php'); ?>
 <div class="container">
 	<div class="content-wrap">
-
 		<div id="food" >
-			<h1>FOOD MENU</h1>
+			<h1 style="display: inline-block;">FOOD MENU</h1>
 
 			<div class="food-menu">
 				<?php 

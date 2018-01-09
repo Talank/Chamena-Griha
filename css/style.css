@@ -20,6 +20,7 @@ header, footer {
 }
 
 .container {
+	margin-top: 0;
 	width: 100%;
 	background: #e9f9e8;
 	background: cover;
@@ -36,7 +37,7 @@ header, footer {
 
 header {
 	background: #ff713f;
-	margin-bottom: 20px;
+	/*margin-bottom: 20px;*/
 }
 
 header img {

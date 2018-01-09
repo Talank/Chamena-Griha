@@ -21,7 +21,7 @@
 	<div class="content-wrap">
 
 <div id="beverage" >
-	<h1>BEVERAGES</h1>
+	<h1 style="display: inline-block;">BEVERAGES</h1>
 	<div class="beverage-menu">
 		<div class="beverage-item">
 			<div class="row1">

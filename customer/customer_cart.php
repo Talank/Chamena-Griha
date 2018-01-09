@@ -45,15 +45,17 @@
 
 <style type="text/css">
 		.container {
-			min-height: 500px;
+			min-height: 520px;
 		}
 </style>
-	
+
 <div class="container">
 	<div class="content-wrap">
 
 		<div id="cart">
-			<h1>ITEMS ADDED TO CART</h1>
+			<!-- -->
+
+			<h1 style="display: inline-block;">ITEMS ADDED TO CART</h1>
 			<div class="cart-box">
 				<div class="items-added">
 
