@@ -1,10 +1,3 @@
-<?php 
-	if(getcwd() == 'C:\wamp64\www\Canteen')
-		include_once('basic_functions.php');
-	else
-		include_once('../basic_functions.php');
- ?>
-
 <style>
 	body {
 		margin: 0;
@@ -20,16 +13,15 @@
 		<div class="nav-canteen">
 			<ul>
 				<li><a href="../index.php" class="cool-links">Home</a></li>
-				<li><a href="#" class="cool-links">Food</a></li>
-				<li><a href="#" class="cool-links">Beverage</a></li>
+				<li><a href="canteen_food.php" class="cool-links">Food</a></li>
+				<li><a href="canteen_beverage.php" class="cool-links">Beverage</a></li>
 				<li><label class="search-box">
 						<input type="text" name="search" placeholder="Search" class="search">
 						<i class="fa fa-search" aria-hidden="true"></i>
 					</label>
 				</li>
-				<li><a href="canteen_notification.php" class="cart"><i id="addItems" class="fa fa-bell-o" aria-hidden="true">
+				<li><a href="canteen_notification.php" class="notification"><i class="fa fa-bell-o" aria-hidden="true"></i>
 					<span style="font-size: 13px; margin-left: 3px;" id="number_on_notification">
-						<!-- <?php //echo "$number_on_cart"; ?> -->
 						<?php 
 							include'../process/db_conn.php';
 							$query= "select distinct u_id from cart where status=2";
@@ -41,7 +33,7 @@
 							}
 						 ?>
 					</span>
-				</i></a></li>
+				</a></li>
 			</ul>
 		</div>	
 		<div class="acc-settings">
@@ -59,50 +51,3 @@
 		
 	</div>
 </header>
-
-<!-- <script type="text/javascript" src="../js/send_notification.js"></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-<script type="text/javascript">
-	function worker() {
-		var view=0;
-
-		$.post();
-
-	//   $.ajax({
-	//     url: '../process/fetch_serve.php', 
-	//     method:"POST",
-	//     data:{view:view},
-	//     dataType:"json",
-	//     success: function(data) {
-	//     	//alert("new notification");
-	//       $('#number_on_notification').html(data);
-	//     },
-	//     complete: function() {
-	//       // Schedule the next request when the current one's complete
-	//       setTimeout(worker(), 5000);
-	//     }
-	//   });
-	// }
-	worker();
-
-	// $(document).ready(function(){
-	// 	function load_unseen_notification(view = '')
-	// 	{
-	// 		$.ajax({
-	// 			url:"../process/fetch_serve.php",
-	// 			method:"POST",
-	// 			data:{view:view},
-	// 			dataType:"json",
-	// 			success:function(data)
-	// 			{
-	// 				//$('.dropdown-menu').html(data.notification);
-	// 				if(data.unseen_notification > 0)
-	// 				{
-	// 					$('#number_on_cart').html(data.unseen_notification);
-	// 				}
-	// 			}
-	// 		});
-	// 	}
-	// }
-</script>

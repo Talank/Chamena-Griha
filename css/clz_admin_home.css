@@ -66,7 +66,7 @@ li h6{
 }
 .clz-search-box {
     position: relative;
-    right: 7%;
+    right: 10%;
 }
 
 .clz-search-box i {
@@ -75,3 +75,4 @@ li h6{
 .clz-search:focus {
     border: 2px solid #776e6e;
 }
+
