@@ -23,38 +23,29 @@
 <div id="beverage" >
 	<h1 style="display: inline-block;">BEVERAGES</h1>
 	<div class="beverage-menu">
-		<div class="beverage-item">
-			<div class="row1">
-				<img src="../images/beverage/coke.jpg">
-			</div>
-			<div class="row2">
-				<h2>Coke</h2>
-				<span>Rs 50</span>
-				<a href="#">Add to cart</a>
-			</div>
-		</div>
 
-		<div class="beverage-item">
-			<div class="row1">
-				<img src="../images/beverage/milk_coffee.jpg">
-			</div>
-			<div class="row2">
-				<h2>Milk Coffee</h2>
-				<span>Rs 50</span>
-				<a href="#">Add to cart</a>
-			</div>
-		</div>
 
-		<div class="beverage-item">
-			<div class="row1">
-				<img src="../images/beverage/lassi.jpg">
-			</div>
-			<div class="row2">
-				<h2>Plain Lassi</h2>
-				<span>Rs 70</span>
-				<a href="#">Add to cart</a>
-			</div>
-		</div>
+		<?php 
+			include '../process/db_conn.php';
+			$query="select food_id,name, price, photo from food where type='beverage'";
+			$result=mysqli_query($conn,$query);
+			$nums=mysqli_num_rows($result);
+			if($nums>0){
+				while($row=mysqli_fetch_array($result)){
+					echo"<div class=beverage-item>
+							<div class=row1>
+								<img src=../images/beverage/$row[photo]>
+							</div>
+							<div class=row2>
+								<h2>$row[name]</h2>
+								<span>Rs. $row[price]</span>
+								<input type=number name=food_id id=food_id value=$row[food_id] style='display: none'>
+								<a href=../process/add_to_cart.php?food_id=$row[food_id]>Add to cart</a>
+							</div>
+						</div>";
+				}
+			}
+		?>
 	</div>
 </div>
 </div>

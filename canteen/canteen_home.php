@@ -44,12 +44,11 @@
 		 	$result = mysqli_query($conn, $query);
 		 	$row= mysqli_fetch_array($result);
 		 	if($row['value']>0){
-		 		$query2= "select distinct food_id from cart where status=1";
+		 		$query2= "select distinct food_id from cart where status like 1";
 		 		$result2 = mysqli_query($conn, $query2);
-		 		$nums= mysqli_fetch_array($result2);
-		 		if ($nums>0) {
-
-		 			while($row2= mysqli_fetch_array($result2)){
+		 		$nums= mysqli_num_rows($result2);
+		 		if ($nums>0) {	
+		 			while($row2=mysqli_fetch_array($result2)){		 				
 		 				$food_id=$row2['food_id'];
 		 				$query3="select sum(quantity) as qty from cart where food_id=$food_id";
 		 				$result3 = mysqli_query($conn, $query3);

@@ -26,7 +26,7 @@
 			<div class="food-menu">
 				<?php 
 					include '../process/db_conn.php';
-					$query="select food_id,name, price, photo from food";
+					$query="select food_id,name, price, photo from food where type='food'";
 					$result=mysqli_query($conn,$query);
 					$nums=mysqli_num_rows($result);
 					if($nums>0){
