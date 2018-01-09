@@ -7,9 +7,9 @@
 		$query="update cart set status=2 where u_id='$u_id'";
 		$result = mysqli_query($conn, $query);		
 		if($result>0){
-			redirect_to("../customer/customer_home.php?msg=serve_success");
+			redirect_to("../customer/customer_cart.php?msg=serve_success");
 		}
 		else
-			redirect_to("../customer/customer_home.php?msg=serve_not_success");
+			redirect_to("../customer/customer_cart.php?msg=serve_not_success");
 	}
  ?>

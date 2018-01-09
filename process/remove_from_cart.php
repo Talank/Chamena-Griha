@@ -7,9 +7,10 @@
 		$u_id= $_SESSION['u_id'];
 		$query0="select sum(status) as value from cart where u_id=$u_id";
 		$result0 = mysqli_query($conn, $query0);
-		$nums0=mysqli_num_rows($result0);
-		if ($nums0>0) {
-			redirect_to("../customer/customer_cart.php?remove_after_order");
+		//$nums0=mysqli_num_rows($result0);
+		$row0=mysqli_fetch_array($result0);
+		if ($row0['value']>0) {
+			redirect_to("../customer/customer_cart.php?msg=remove_after_order");
 		}
 
 		else{
@@ -17,10 +18,10 @@
 			$result = mysqli_query($conn, $query);
 			if ($result) {
 				//echo "$nums";
-				redirect_to("../customer/customer_cart.php?item_removed");	
+				redirect_to("../customer/customer_cart.php");	
 			}
 			else
-				redirect_to("../customer/customer_cart.php?remove_not_success");
+				redirect_to("../customer/customer_cart.php?msg=remove_not_success");
 		}
 	}
 ?>
