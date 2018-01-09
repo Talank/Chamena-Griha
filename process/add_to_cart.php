@@ -23,28 +23,26 @@
 				$query="update cart set quantity=quantity+1, update_date='$date', update_time='$time', clock='$clock' where item_id=$item_id";
 				$result = mysqli_query($conn, $query);
 				if ($result) {
-					redirect_to("../customer/customer_food.php?item_added_u_id=$u_id");	
+					//redirect_to("../customer/customer_food.php?item_added_u_id=$u_id");
+					echo "<script type='text/javascript'>
+							window.history.back();
+						</script>";	
 				}
 				else
-					redirect_to("../customer/customer_food.php?add_not_success1");
+					redirect_to("../index.php?msg=add_not_success1");
 			}
 			else{
 				$query="insert into cart (u_id,food_id,quantity,status,update_date,update_time,clock) values($u_id,$food_id,1,0,'$date','$time','$clock')"; 
-				//status 0 for Order and 1 for serve
+				//status 0 for Add to cart and 1 for order 2 for serve
 				
 				$result = mysqli_query($conn, $query);
-				if ($result) {
-					//redirect_to("../customer/customer_food.php?item_added_u_id=$u_id&&food_id=$food_id");	
+				if ($result) {	
 					echo "<script type='text/javascript'>
 							window.history.back();
 						</script>";
 				}
 				else
-					redirect_to("../customer/customer_food.php?add_not_success2");
+					redirect_to("../customer/customer_food.php?msg=add_not_success2");
 			}	
-		// }
-		// else{
-		// 	redirect_to("../customer/customer_food.php?msg=add_not_success_time");
-		// }
 	}
 ?>

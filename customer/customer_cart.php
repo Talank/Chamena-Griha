@@ -4,14 +4,41 @@
  		
  		if ($msg=="add_not_success_time") {
  			echo"<script type='text/javascript'>
-		if (confirm('Can\'t order between 9AM-12PM') == true) {
-			        window.location.href = '../index.php';
-			    } else {
-			        window.location.href = '../index.php';
-			    }
-	</script>";
+					if (confirm('Can\'t order between 9AM-12PM') == true) {
+						        window.location.href = '../index.php';
+						    } else {
+						        window.location.href = '../index.php';
+						    }
+				</script>";
+		}
+		if ($msg=="remove_after_order") {
+ 			echo"<script type='text/javascript'>
+					if (confirm('Can\'t remove after order') == true) {
+						        window.location.href = '../index.php';
+						    } else {
+						        window.location.href = '../index.php';
+						    }
+				</script>";
+ 		}
+ 		if ($msg=="remove_not_success") {
+ 			echo"<script type='text/javascript'>
+					if (confirm('sorry! there is a problem on removing item') == true) {
+						        window.location.href = '../index.php';
+						    } else {
+						        window.location.href = '../index.php';
+						    }
+				</script>";
  		}
  		
+ 		if ($msg=="serve_success") {
+ 			echo"<script type='text/javascript'>
+					if (confirm('Your serve request has been sent') == true) {
+						        window.location.href = '../index.php';
+						    } else {
+						        window.location.href = '../index.php';
+						    }
+				</script>";
+		}
 	}
   ?>
 
@@ -53,15 +80,24 @@
 	<div class="content-wrap">
 
 		<div id="cart">
-			<!-- -->
+			<h1>
+				<?php 
+						include '../process/db_conn.php';
+						$u_id=$_SESSION['u_id'];
 
-			<h1 style="display: inline-block;">ITEMS ADDED TO CART</h1>
+						$query0="select count(food_id) as value from cart where u_id=$u_id";
+						$result0 = mysqli_query($conn, $query0);
+						$row0=mysqli_fetch_array($result0);
+						if ($row0['value']>0)
+							echo "ITEMS ADDED TO CART";
+						else
+							echo "YOUR CART IS EMPTY";
+				 ?>
+			</h1>
 			<div class="cart-box">
 				<div class="items-added">
 
 					<?php 
-						include '../process/db_conn.php';
-						$u_id=$_SESSION['u_id'];
 						$total_price=0;
 						$query="select food_id,name, price, photo from food where food_id in (select food_id from cart where u_id=$u_id)";
 						$result=mysqli_query($conn,$query);
@@ -96,9 +132,9 @@
 						$result = mysqli_query($conn, $query);		
 						$nums=mysqli_num_rows($result);
 						if($nums>0){
-							//$status;
+							$status=0;
 							while ($row=mysqli_fetch_array($result)) {
-								$status = $row['status'];
+								$status += $row['status'];
 							}
 							if ($status==0) {
 								echo "<form action=../process/order_process.php method=GET>
@@ -121,63 +157,3 @@
 <?php 
 	include('../footer.php');
  ?>
-
-<!--  <script type="text/javascript" src="../js/send_notification.js"></script> -->
- <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
- <script type="text/javascript" src="../js/serve.js"></script> -->
- <script>
-// $(document).ready(function(){
- 
-//  function load_unseen_notification(view = '')
-//  {
-//   $.ajax({
-//    url:"fetch.php",
-//    method:"POST",
-//    data:{view:view},
-//    dataType:"json",
-//    success:function(data)
-//    {
-//     $('.dropdown-menu').html(data.notification);
-//     if(data.unseen_notification > 0)
-//     {
-//      $('.count').html(data.unseen_notification);
-//     }
-//    }
-//   });
-//  }
- 
-//  load_unseen_notification();
- 
-//  $('#comment_form').on('submit', function(event){
-//   event.preventDefault();
-//   if($('#subject').val() != '' && $('#comment').val() != '')
-//   {
-//    var form_data = $(this).serialize();
-//    $.ajax({
-//     url:"insert.php",
-//     method:"POST",
-//     data:form_data,
-//     success:function(data)
-//     {
-//      $('#comment_form')[0].reset();
-//      load_unseen_notification();
-//     }
-//    });
-//   }
-//   else
-//   {
-//    alert("Both Fields are Required");
-//   }
-//  });
- 
-//  $(document).on('click', '.dropdown-toggle', function(){
-//   $('.count').html('');
-//   load_unseen_notification('yes');
-//  });
- 
-//  setInterval(function(){ 
-//   load_unseen_notification();; 
-//  }, 5000);
- 
-// });
-</script>
