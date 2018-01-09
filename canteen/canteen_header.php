@@ -27,7 +27,7 @@
 						<i class="fa fa-search" aria-hidden="true"></i>
 					</label>
 				</li>
-				<li><a href="" class="cart"><i id="addItems" class="fa fa-bell-o" aria-hidden="true">
+				<li><a href="canteen_notification.php" class="cart"><i id="addItems" class="fa fa-bell-o" aria-hidden="true">
 					<span style="font-size: 13px; margin-left: 3px;" id="number_on_notification">
 						<!-- <?php //echo "$number_on_cart"; ?> -->
 					</span>
@@ -54,21 +54,26 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <script type="text/javascript">
-	(function worker() {
-	  $.ajax({
-	    url: '../process/fetch_serve.php', 
-	    method:"POST",
-	    //data:{view:view},
-	    dataType:"json",
-	    success: function(data) {
-	      $('#number_on_cart').html(data.unseen_notification);
-	    },
-	    complete: function() {
-	      // Schedule the next request when the current one's complete
-	      setTimeout(worker, 5000);
-	    }
-	  });
-	})();
+	function worker() {
+		var view=0;
+
+		$.post();
+
+	//   $.ajax({
+	//     url: '../process/fetch_serve.php', 
+	//     method:"POST",
+	//     data:{view:view},
+	//     dataType:"json",
+	//     success: function(data) {
+	//     	//alert("new notification");
+	//       $('#number_on_notification').html(data);
+	//     },
+	//     complete: function() {
+	//       // Schedule the next request when the current one's complete
+	//       setTimeout(worker(), 5000);
+	//     }
+	//   });
+	// }
 	worker();
 
 	// $(document).ready(function(){

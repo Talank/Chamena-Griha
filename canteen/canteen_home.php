@@ -22,16 +22,6 @@
 <section class="container">
 	<div class="content-wrap">
 
-	<?php
-		if (isset($_SESSION['food_add_id'])) {
-			echo '<script type="text/javascript">
-						window.alert("1 food item has been added");
-					</script>';
-
-			unset($_SESSION['food_add_id']);
-		}
-	 ?>
-
 	<!-- The Form -->
 	<div id="theForm" class="form">
 

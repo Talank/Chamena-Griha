@@ -3,13 +3,13 @@
  		$msg=$_GET['msg'];
  		
  		if ($msg=="add_not_success_time") {
- 			echo "<script type=text/javascript>
-		 		if (confirm('Can't order between 9AM-12PM) == true) {
+ 			echo"<script type='text/javascript'>
+		if (confirm('Can\'t order between 9AM-12PM') == true) {
 			        window.location.href = '../index.php';
 			    } else {
 			        window.location.href = '../index.php';
 			    }
-		 	</script>";
+	</script>";
  		}
  		
 	}
@@ -29,6 +29,12 @@
 	<link rel="stylesheet" type="text/css" href="../css/clz_admin_home.css">
 
 	<script type="text/javascript" src="../js/global.js"></script>
+
+	<script type=text/javascript>
+			function showPop(){
+		 		
+			   }
+		 	</script>
 </head>
 <body>
 	<?php 
@@ -108,61 +114,61 @@
  ?>
 
 <!--  <script type="text/javascript" src="../js/send_notification.js"></script> -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+ <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script type="text/javascript" src="../js/serve.js"></script> -->
  <script>
-$(document).ready(function(){
+// $(document).ready(function(){
  
- function load_unseen_notification(view = '')
- {
-  $.ajax({
-   url:"fetch.php",
-   method:"POST",
-   data:{view:view},
-   dataType:"json",
-   success:function(data)
-   {
-    $('.dropdown-menu').html(data.notification);
-    if(data.unseen_notification > 0)
-    {
-     $('.count').html(data.unseen_notification);
-    }
-   }
-  });
- }
+//  function load_unseen_notification(view = '')
+//  {
+//   $.ajax({
+//    url:"fetch.php",
+//    method:"POST",
+//    data:{view:view},
+//    dataType:"json",
+//    success:function(data)
+//    {
+//     $('.dropdown-menu').html(data.notification);
+//     if(data.unseen_notification > 0)
+//     {
+//      $('.count').html(data.unseen_notification);
+//     }
+//    }
+//   });
+//  }
  
- load_unseen_notification();
+//  load_unseen_notification();
  
- $('#comment_form').on('submit', function(event){
-  event.preventDefault();
-  if($('#subject').val() != '' && $('#comment').val() != '')
-  {
-   var form_data = $(this).serialize();
-   $.ajax({
-    url:"insert.php",
-    method:"POST",
-    data:form_data,
-    success:function(data)
-    {
-     $('#comment_form')[0].reset();
-     load_unseen_notification();
-    }
-   });
-  }
-  else
-  {
-   alert("Both Fields are Required");
-  }
- });
+//  $('#comment_form').on('submit', function(event){
+//   event.preventDefault();
+//   if($('#subject').val() != '' && $('#comment').val() != '')
+//   {
+//    var form_data = $(this).serialize();
+//    $.ajax({
+//     url:"insert.php",
+//     method:"POST",
+//     data:form_data,
+//     success:function(data)
+//     {
+//      $('#comment_form')[0].reset();
+//      load_unseen_notification();
+//     }
+//    });
+//   }
+//   else
+//   {
+//    alert("Both Fields are Required");
+//   }
+//  });
  
- $(document).on('click', '.dropdown-toggle', function(){
-  $('.count').html('');
-  load_unseen_notification('yes');
- });
+//  $(document).on('click', '.dropdown-toggle', function(){
+//   $('.count').html('');
+//   load_unseen_notification('yes');
+//  });
  
- setInterval(function(){ 
-  load_unseen_notification();; 
- }, 5000);
+//  setInterval(function(){ 
+//   load_unseen_notification();; 
+//  }, 5000);
  
-});
+// });
 </script>
