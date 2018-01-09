@@ -1,3 +1,27 @@
+<?php 
+	if (isset($_GET['msg'])) {
+ 		$msg=$_GET['msg'];		
+ 		if ($msg=="food_already_existed") {
+ 			echo"<script type='text/javascript'>
+					if (confirm('The food already exists') == true) {
+						        window.location.href = 'canteen_home.php';
+						    } else {
+						        window.location.href = 'canteen_home.php';
+						    }
+				</script>";
+		}
+		if ($msg=="food_added_succesfully") {
+ 			echo"<script type='text/javascript'>
+					if (confirm('1 food item has been added') == true) {
+						        window.location.href = 'canteen_home.php';
+						    } else {
+						        window.location.href = 'canteen_home.php';
+						    }
+				</script>";
+		}
+	}
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>

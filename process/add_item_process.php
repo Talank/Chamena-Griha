@@ -7,10 +7,11 @@
 
 		$food_name = $_POST['foodName'];
 		$food_price = $_POST['foodPrice'];
-		$food_desc = $_POST['foodDesc'];
+		$type= $_POST['type'];
 		$food_pic=$_FILES["foodPic"]["name"];
-		$target_dir = "../images/food/";
-		$target_file = $target_dir . basename($_FILES["foodPic"]["name"]);
+		$food_pic= str_replace(' ', '%20', $food_pic);
+		$target_dir = "../images/$type/";
+		$target_file = $target_dir . basename($food_pic);
 		$uploadOk = 1;
 		$imageFileType =strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 		// Check if image file is a actual image or fake image
@@ -54,13 +55,13 @@
 		    	$row = mysqli_fetch_array($result);
 				
 				if($row){
-					redirect_to("../index.php?food_already_existed");
+					redirect_to("../canteen/canteen_home.php?msg=food_already_existed");
 				}
 
 				else{
 					/********************INSERTING THE DATA INTO THE FOOD TABLE********************************************************************************************************************************************************/
 					if (!empty($food_pic)) {
-						$query = "insert into food(name,price,photo,food_desc) values('$food_name',$food_price,'$food_pic','$food_desc')";
+						$query = "insert into food(name,price,photo,type) values('$food_name',$food_price,'$food_pic','$type')";
 
 						if (mysqli_query($conn , $query)){
 							$query = "select * from food where name = '$food_name'";
@@ -69,7 +70,7 @@
 				        	$food_add_id = $row['food_id'];
 
 							$_SESSION['food_add_id']= $food_add_id;
-							redirect_to("../index.php?food_added_succesfully");
+							redirect_to("../canteen/canteen_home.php?msg=food_added_succesfully");
 						}
 					}
 					else

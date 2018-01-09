@@ -25,9 +25,9 @@
 			$time=date("h:i:s");
 			$clock=date("a");
 
-	       	list($time1_hour, $time1_min) = explode(":", $time);
+	       	//list($time1_hour, $time1_min) = explode(":", $time);
 
-			if (($time1_hour <="08" && $clock=="am") || $clock=="pm") {
+			//if (($time1_hour <="08" && $clock=="am") || $clock=="pm") {
 				$query="select * from cart where u_id=$u_id and food_id=$food_id";
 				$result = mysqli_query($conn, $query);		
 				$nums=mysqli_num_rows($result);
@@ -58,9 +58,9 @@
 					else
 						redirect_to("../customer/customer_food.php?msg=add_not_success2");
 				}
-			}
-			else
-				redirect_to("../customer/customer_food.php?msg=add_not_success_time");
+			//}
+			// else
+			// 	redirect_to("../customer/customer_food.php?msg=add_not_success_time");
 		}	
 		else
 			redirect_to("../customer/customer_home.php?msg=add_after_order");	
