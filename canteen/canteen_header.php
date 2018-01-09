@@ -1,10 +1,3 @@
-<?php 
-	if(getcwd() == 'C:\wamp64\www\Canteen')
-		include_once('basic_functions.php');
-	else
-		include_once('../basic_functions.php');
- ?>
-
 <style>
 	body {
 		margin: 0;
@@ -27,10 +20,10 @@
 						<i class="fa fa-search" aria-hidden="true"></i>
 					</label>
 				</li>
-				<li><a href="canteen_notification.php" class="notification"><i id="addItems" class="fa fa-bell-o" aria-hidden="true">
+				<li><a href="canteen_notification.php" class="notification"><i class="fa fa-bell-o" aria-hidden="true"></i>
 					<span style="font-size: 13px; margin-left: 3px;" id="number_on_notification">
 					</span>
-				</i></a></li>
+				</a></li>
 			</ul>
 		</div>	
 		<div class="acc-settings">
@@ -48,45 +41,3 @@
 		
 	</div>
 </header>
-
-<!-- <script type="text/javascript" src="../js/send_notification.js"></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-<script type="text/javascript">
-	(function worker() {
-	  $.ajax({
-	    url: '../process/fetch_serve.php', 
-	    method:"POST",
-	    //data:{view:view},
-	    dataType:"json",
-	    success: function(data) {
-	      $('#number_on_cart').html(data.unseen_notification);
-	    },
-	    complete: function() {
-	      // Schedule the next request when the current one's complete
-	      setTimeout(worker, 5000);
-	    }
-	  });
-	})();
-	worker();
-
-	// $(document).ready(function(){
-	// 	function load_unseen_notification(view = '')
-	// 	{
-	// 		$.ajax({
-	// 			url:"../process/fetch_serve.php",
-	// 			method:"POST",
-	// 			data:{view:view},
-	// 			dataType:"json",
-	// 			success:function(data)
-	// 			{
-	// 				//$('.dropdown-menu').html(data.notification);
-	// 				if(data.unseen_notification > 0)
-	// 				{
-	// 					$('#number_on_cart').html(data.unseen_notification);
-	// 				}
-	// 			}
-	// 		});
-	// 	}
-	// }
-</script>
