@@ -80,7 +80,7 @@
 	<div class="content-wrap">
 
 		<div id="cart">
-			<h1>
+			
 				<?php 
 						include '../process/db_conn.php';
 						$u_id=$_SESSION['u_id'];
@@ -89,11 +89,14 @@
 						$result0 = mysqli_query($conn, $query0);
 						$row0=mysqli_fetch_array($result0);
 						if ($row0['value']>0)
-							echo "ITEMS ADDED TO CART";
+							echo "<div class = full-cart>
+									<h1>ITEMS ADDED TO CART</h1>
+								</div>";
 						else
-							echo "YOUR CART IS EMPTY";
+							echo "<div class = empty-cart>
+				 					<h1>Your cart is Empty.</h1>
+				 				</div>";
 				 ?>
-			</h1>
 			<div class="cart-box">
 				<div class="items-added">
 
@@ -125,7 +128,7 @@
 				</div>
 				
 				<div class="total order serve">
-					<h2>Total: Rs <?php echo "$total_price"; ?></h2>
+					<h2 class="total-price">Total: Rs <?php echo "$total_price"; ?></h2>
 
 					<?php 
 						$query="select * from cart where u_id=$u_id";

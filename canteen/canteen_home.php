@@ -56,17 +56,16 @@
 					</div>";
 	}
 		 	else
-		 		echo"<img style=width: 200px; src=../images/sad_emo.png>
-		 			<p>There are no orders today.</p>"
+		 		echo"<div class=no-order>
+		  				<img src=../images/sad_emo.png>
+		  				<h1>Sorry!!! There are no orders for today.</h1>
+		 			 </div>"
 		 		
 		  ?>
 
 		  <!-- DISPLAY THIS WHEN THERE ARE NO ORDERS FOR FOOD -->
 
-		  <div class="no-order">
-		  	<img src=../images/sad_emo.png>
-		  	<h1>Sorry!!! There are no orders for today.</h1>
-		  </div>
+		  
 
 		  <!-- DISPLAY THIS WHEN THERE ARE ORDERS FOR FOOD -->
 		<!-- <h1 style="font-size: 40px; text-align: center; margin-top: 0">Today's Order</h1>
