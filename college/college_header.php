@@ -33,16 +33,11 @@
 		<div class="nav-college">
 			<ul>
 				<li><a href="../index.php" class="cool-links">Home</a></li>
-				<li><label class="search-box">
-					
-							<input type="text" name="search" placeholder="Search" class="search"sss>
-							<button style="background-color: #ff713f; box-shadow: 0px; border-color: #ff713f; border-style: none;">
-								<i class="fa fa-search" aria-hidden="true" style="color: #fff;"></i>
-							</button>
-						
-					</label>
-				</li>
 			</ul>
+		</div>
+		<div class="college-name">
+			<h2>Gandaki College of Engineering and Science</h2>
+			<!-- <h6>Lamachour, Pokhara-Lekhnath</h6> -->
 		</div>	
 		<div class="acc-settings">
 			 <label class="acc">
@@ -51,7 +46,7 @@
 			// include('process/fname.php');
 			// echo"$firstname";
 			 ?>-->
-			 	College</span>
+			 	GCES</span>
 				<i  onclick="myFunction()" class="fa fa-user-o dropbtn" aria-hidden="true"></i>
 			</label>
 			<div id="myMenu" class="menu">

@@ -15,6 +15,7 @@
 		background-size: cover;
 	}
 </style>
+
 <?php include('../process/cart_count.php'); ?>
 <header class="customer">
 	<div class="content-wrap">
