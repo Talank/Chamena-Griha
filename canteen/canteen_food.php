@@ -16,6 +16,7 @@
 		function showForm(){
 			
 			document.getElementById("theForm").style.display='block';
+			document.getElementById("theForm").style.height='300px';
 		}
 	</script>
 </head>

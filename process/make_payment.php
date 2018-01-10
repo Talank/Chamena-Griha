@@ -24,7 +24,7 @@
 				$query="update `account` set amount='$amount' where u_id='$u_id'";
 					$result = mysqli_query($conn, $query);
 					if ($result) {
-						redirect_to("../college/college_home.php?success");	
+						redirect_to("../college/college_home.php?msg=success");	
 					}
 					else
 						redirect_to("../college/college_home.php?not_success1");

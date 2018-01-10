@@ -22,6 +22,7 @@
 		$date=date_create($row['previous_order']);
 		$todayDate=date_create(date('y-m-d',time()));
 	}
+	
  ?>
 
 <!DOCTYPE html>
