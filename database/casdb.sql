@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2018 at 06:16 PM
+-- Generation Time: Jan 14, 2018 at 06:52 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -39,17 +39,7 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`account_no`, `amount`, `u_id`) VALUES
-(55, 0, 93),
-(54, 0, 92),
-(53, 270, 91),
-(52, 0, 90),
-(56, 0, 94),
-(57, 0, 95),
-(58, 0, 96),
-(59, 60, 97),
-(60, 0, 98),
-(61, 0, 99),
-(68, 0, 106);
+(69, 0, 107);
 
 -- --------------------------------------------------------
 
@@ -100,13 +90,6 @@ CREATE TABLE `cart` (
   `update_time` time NOT NULL,
   `clock` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`item_id`, `u_id`, `food_id`, `quantity`, `status`, `update_date`, `update_time`, `clock`) VALUES
-(22, 91, 10, 1, 0, '2018-01-08', '10:43:54', 'pm');
 
 -- --------------------------------------------------------
 
@@ -197,15 +180,7 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`reg_id`, `first_name`, `last_name`, `u_id`, `photo`, `account_no`, `phone`, `gender`) VALUES
-(784, 'Zena', 'Poudel', 106, 'Zena%20Poudel.JPG', 68, 9845567412, 'female'),
-(789, 'Madan', 'Poudel', 90, '', 52, 45654458789, 'male'),
-(385, 'Talank', 'Baral', 91, '', 53, 9840010300, 'male'),
-(6511223, 'Ashish', 'Shrestha', 92, '', 54, 9806627492, 'male'),
-(478, 'Prajwal', 'Adhikari', 94, '', 56, 9804125595, 'male'),
-(785, 'Bibek', 'Thapa', 95, '', 57, 9850012033, 'male'),
-(458, 'Ajit', 'Gauli', 96, '', 58, 9865412358, 'male'),
-(456, 'Anchal', 'Ghale', 97, '', 59, 9856412304, 'male'),
-(124, 'Apil', 'Bhattarai', 98, '', 60, 9874621584, 'male');
+(123, 'Zombie', 'Boie', 107, 'zombieboie.png', 69, 9800010111, 'male');
 
 -- --------------------------------------------------------
 
@@ -245,17 +220,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`u_id`, `username`, `password`, `type`, `email`, `forgot_pw_token`) VALUES
 (82, 'canteen123', '5f4dcc3b5aa765d61d8327deb882cf99', 4, 'canteen@gces.edu.np', NULL),
-(92, 'elton_aasis', 'elton123', 0, 'aashishshrestha5532@gmail.com', 'osig08twfbuhr3n'),
-(91, 'Talank123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'talank@gces.edu.np', NULL),
 (89, 'college123', '5f4dcc3b5aa765d61d8327deb882cf99', 3, 'gces@gces.edu.np', NULL),
-(90, 'Maddy123', 'maddy123', 0, 'madan@gces.edu.np', 'gf3yk016z8imdv5'),
-(93, 'elton_aasis123', 'elton123', 0, 'aashishshrestha5532@gmail.com', 'osig08twfbuhr3n'),
-(94, 'prajwal123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'prajwal.ady@gmail.com', NULL),
-(95, 'bibek123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'bibek@gmail.com', NULL),
-(96, 'Ajit123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'ajit@gmail.com', NULL),
-(97, 'Anchal123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'anchal@gmail.com', NULL),
-(98, 'Apil123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'apil@gmail.com', NULL),
-(106, 'Zena123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'zena@gmail.com', NULL);
+(107, 'zombie123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'zombie@gmail.com', NULL);
 
 --
 -- Indexes for dumped tables
@@ -329,7 +295,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `account_no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `account_no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `beverage`
@@ -347,7 +313,7 @@ ALTER TABLE `canteen`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `item_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `item_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `collegeadmin`
@@ -377,7 +343,7 @@ ALTER TABLE `teacher`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
