@@ -54,18 +54,15 @@
 									$result2= mysqli_query($conn, $query2);
 									$row2=mysqli_fetch_array($result2);
 
-									echo " <div class=user-row>
-												<div class=user_pic>
-												 	<img src=../images/users/$row2[photo]>
-												</div>
-												<div class=user_name>
-												 	<p>$row2[first_name] $row2[last_name]</p>
-												</div>
-												<div class=request_time>
-												 	<p>$row[update_time] $row[clock]</p>
-												</div>
-											</div>
-											";
+									echo " <div id=user_pic>
+											 	<img src=../images/users/$row2[photo] alt=$row2[first_name] height= 150px;>
+											 </div>
+											 <div id=user_name>
+											 	<p>$row2[first_name] $row2[last_name]</p>
+											 </div>
+											 <div id=request_time>
+											 	<p>$row[update_time] $row[clock]</p>
+											 </div>";
 
 									$query3= "select food_id,quantity from cart where u_id=$u_id";
 									$result3= mysqli_query($conn, $query3);
@@ -75,20 +72,12 @@
 										$result4= mysqli_query($conn, $query4);
 										$row4= mysqli_fetch_array($result4);
 
-										echo "
-										<div class=user-row>
-											<div class=food_list>
+										echo "<div id=food_list>
 											 	<p>$row4[name] * $row3[quantity]</p>
-											</div>
-										</div>";
+											 </div>";
 									}
-									echo "
-									<div class=user-row>
-										<a class=mark_served href=../process/serve.php?u_id=$u_id>Mark Served</a>
-									</div>
-									<hr>"
-									;
-
+									echo "<a href=../process/serve.php?u_id=$u_id>Mark Served</a>";
+									echo "<hr>";
 								}
 							}
 						}

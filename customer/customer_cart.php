@@ -102,7 +102,7 @@
 
 					<?php 
 						$total_price=0;
-						$query="select food_id,name, price, photo from food where food_id in (select food_id from cart where u_id=$u_id)";
+						$query="select food_id,name, price, photo,type from food where food_id in (select food_id from cart where u_id=$u_id)";
 						$result=mysqli_query($conn,$query);
 						if ($result) {
 							$nums=mysqli_num_rows($result);
@@ -115,7 +115,7 @@
 
 									$total_price += ($row['price']*$row2['quantity']);
 									echo"<div class=cart-item>
-											<img src=../images/food/$row[photo]>
+											<img src=../images/$row[type]/$row[photo]>
 											<h2>$row[name]</h2>
 											<span>Rs: $row[price] * $row2[quantity]</span>
 											<input type=number name=food_id id=food_id value=$row[food_id] style='display: none'>

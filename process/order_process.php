@@ -11,7 +11,9 @@
 
        	list($time1_hour, $time1_min) = explode(":", $time);
 
-		if (($time1_hour <="09" && $clock=="am")||$clock=="pm") {
+		//if (($time1_hour <="09" && $clock=="am")||$clock=="pm") {
+       	if (true) {
+       		
 			$total_price=0;
 			$u_id=$_SESSION['u_id'];
 			$query="select * from cart where u_id=$u_id and status=0";
