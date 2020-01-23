@@ -37,19 +37,16 @@
 						//$photo= str_replace(' ', '%20', '../images/users/$pic_name');
 						echo "<div>";
 						echo "<div>
-						 			<img src=../images/users/$photo style='width: 200px;'>
+						 			<img src=../images/users/$photo>
 							 	</div>
-							 	<br>
 							 	<div>
 							 		<p>NAME: $row[first_name] $row[last_name]</p>
-							 	</div>
-							 	<br>";
+							 	</div>";
 							 	
 							 	if($type==0){
 							 		echo"<div>
 							 			REGESTRATION #: $row[reg_id]
-							 		</div>
-							 		<br>";
+							 		</div>";
 								}
 
 						$query2 = "select amount from `account` where u_id = $u_id";
@@ -60,11 +57,10 @@
 
 							echo "<div>
 								 	AMOUNT: $row2[amount] <br>
-								 </div>
-								 <br>";
+								 </div>";
 								 	
 						}
-						echo"</div><br>";
+						echo"</div>";
 					}
 	  			}
 			}

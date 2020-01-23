@@ -25,8 +25,8 @@
 ?>	
 <div>
 	<div class = loginbox>
-		<img src="images/logo.png" class = "head-logo">
-		<img src="images/user.PNG" class = "user">
+		<img src="images/logo.PNG" class = "head-logo">
+		<img src="images/user.png" class = "user">
 		<h3>Sign In Here</h3>
 		<form class="loginForm" method="post" action="process/login_process.php">
 			<div id = "loginError1"></div>

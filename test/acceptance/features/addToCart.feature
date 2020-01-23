@@ -9,5 +9,4 @@ Feature: add to cart
       When user tries to add an item "item" to the cart
       Then number of the item in the cart should be increased
       And the total number of types of items in cart is updated
-
       
