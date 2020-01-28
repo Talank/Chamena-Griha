@@ -18,8 +18,6 @@ When('user enters username {string} and password {string} in the login form', fu
     return client.waitForElementVisible(loginForm)
         .setValue('xpath', usernameField, username)
         .setValue('xpath', passwordField, password);
-
-    //return 'pending';
 });
 
 When('user tries to login', function () {

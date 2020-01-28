@@ -4,7 +4,12 @@ Feature: order
     So that my order can be served
 
     Scenario: normal order
-        Given user has added items on cart
-        When user tries to order the items on cart
+        Given user has logged in as a customer with username "zombie123" and password "password"
+        And the user has added following items to the cart
+            | items    |
+            | Pakauda |
+            | Momo    |
+        And the user has browsed to cart page
+        When the user tries to order the item on cart
         Then order should be success
         And serve option should be visible
