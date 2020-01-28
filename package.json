@@ -1,0 +1,32 @@
+{
+  "name": "chamenagriha",
+  "version": "1.0.0",
+  "description": "PRAJWAL: Responsive webpage design done. Most of the design issues must be fixed now. If you find any problems, inform me.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "cucumber-pretty": "^6.0.0",
+    "yarn": "^1.21.1"
+  },
+  "devDependencies": {
+    "cucumber": "^6.0.5",
+    "nightwatch": "^1.3.3",
+    "nightwatch-api": "^3.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-e2e": "node_modules/cucumber/bin/cucumber-js -f node_modules/cucumber-pretty --require test/acceptance/index.js --require test/acceptance/stepDefinitions"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Talank/Chamena-Griha.git"
+  },
+  "author": "talank",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Talank/Chamena-Griha/issues"
+  },
+  "homepage": "https://github.com/Talank/Chamena-Griha#readme"
+}

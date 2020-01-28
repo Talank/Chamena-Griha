@@ -1,23 +1,26 @@
 <?php
 	if(isset($_GET['username_not_found'])==true) {
 		echo '
-			<script type = "text/javascript">
-				// var err = document.getElementById("loginError1");
-				// err.style.color = "red";
-				// err.innerHTML("Username Not Found");
-				alert("Username Not found");
-			</script>
+		
+			<div id = "loginError1">incorrect username or password</div>
 		';
+		// <script type = "text/javascript">
+			// 	// var err = document.getElementById("loginError1");
+			// 	// err.style.color = "red";
+			// 	// err.innerHTML("Username Not Found");
+			// 	alert("Username Not found");
+			// </script>
 	}
 	else if(isset($_GET['password_wrong'])==true) {
 		echo '
-			<script type = "text/javascript">
-				// var err = document.getElementById("loginError2");
-				// err.style.color = "red";
-				// err.innerHTML("Invalid Username or Password");
-				alert("Invalid Username or Password");
-			</script>
+		<div id = "loginError1">incorrect username or password</div>
 		';
+		// <script type = "text/javascript">
+			// 	// var err = document.getElementById("loginError2");
+			// 	// err.style.color = "red";
+			// 	// err.innerHTML("Invalid Username or Password");
+			// 	alert("Invalid Username or Password");
+			// </script>
 	}
 	else{
 		// echo 'Valid';
