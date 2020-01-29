@@ -5,11 +5,11 @@ Feature: order
 
     Scenario: normal order
         Given user has logged in as a customer with username "zombie123" and password "password"
+        And the user has browsed to food page
         And the user has added following items to the cart
-            | items    |
+            | items   |
             | Pakauda |
             | Momo    |
         And the user has browsed to cart page
         When the user tries to order the item on cart
-        Then order should be success
-        And serve option should be visible
+        Then serve option should be visible
