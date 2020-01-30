@@ -1,4 +1,5 @@
 module.exports = {
+    page_objects_path: './test/acceptance/pageObjects',
     src_folders: ['test'],
     test_settings: {
         default: {
