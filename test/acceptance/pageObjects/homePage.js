@@ -16,6 +16,9 @@ module.exports = {
         selectFoodMenu: function () {
             return this.useXpath().waitForElementVisible('@foodLink').click('@foodLink').useCss();
         },
+        selectCartIcon: function () {
+            return this.waitForElementVisible('@cartIcon').click('@cartIcon')
+        }
 
     },
     elements: {
@@ -30,6 +33,9 @@ module.exports = {
         foodLink: {
             selector: '//div//a[.="Food"]',
             locateStrategy: 'xpath'
+        },
+        cartIcon: {
+            selector: '.cart'
         }
     }
 }

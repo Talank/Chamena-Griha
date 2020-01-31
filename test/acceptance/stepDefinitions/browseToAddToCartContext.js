@@ -30,7 +30,7 @@ Then('the user should be redirected to the food page', function () {
 });
 
 Then('add to cart feature should be displayed in the food page', function () {
-    return client.useXpath().waitForElementVisible(addToCartLink).useCss();
+    return client.page.homePage().isAddToCartVisible()
 });
 
 When('the user selects the beverage menu', function () {
