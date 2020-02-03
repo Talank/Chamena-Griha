@@ -34,15 +34,13 @@ Then('add to cart feature should be displayed in the food page', function () {
 });
 
 When('the user selects the beverage menu', function () {
-    const beverageLink = '//div//a[.="Beverage"]'
-    return client.useXpath().waitForElementVisible(beverageLink).click(beverageLink).useCss();
+    return client.page.homePage().selectBeverageMenu()
 });
 
 Then('the user should be redirected to the beverage page', function () {
-    const beverageMenu = '//div/h1[.="BEVERAGES"]'
-    return client.useXpath().waitForElementVisible(beverageMenu).useCss();
+    return client.page.beveragePage().redirectToBeveragePage()
 });
 
 Then('add to cart feature should not be displayed in the beverage page', function () {
-    return client.useXpath().waitForElementNotPresent(addToCartLink).useCss();
+    return client.page.beveragePage().isAddToCartNotVisible()
 });

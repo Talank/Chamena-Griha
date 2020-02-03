@@ -17,7 +17,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test-e2e": "node_modules/cucumber/bin/cucumber-js -f node_modules/cucumber-pretty --require test/acceptance/index.js --require test/acceptance/stepDefinitions"
+    "test-e2e": "node_modules/cucumber/bin/cucumber-js -f node_modules/cucumber-pretty --require test/acceptance/index.js --require test/acceptance/stepDefinitions --retry=0"
   },
   "repository": {
     "type": "git",

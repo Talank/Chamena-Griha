@@ -1,4 +1,5 @@
 // const indexPage = require('indexPage')
+const assert = require('assert')
 
 module.exports = {
     url(){
@@ -16,8 +17,19 @@ module.exports = {
         selectFoodMenu: function () {
             return this.useXpath().waitForElementVisible('@foodLink').click('@foodLink').useCss();
         },
+        selectBeverageMenu: function () {
+            return this.useXpath().waitForElementVisible('@beverageLink').click('@beverageLink').useCss();
+        },
         selectCartIcon: function () {
             return this.waitForElementVisible('@cartIcon').click('@cartIcon')
+        },
+        checkNumberOfItemsOnCart: async function (numberOfItems) {
+            await this.waitForElementVisible('@numberOnCart')
+            return this.api.element(this.elements.numberOnCart.locateStrategy, this.elements.numberOnCart.selector, (result) => {
+                this.api.elementIdText(result.value['ELEMENT'], (result) =>{
+                    assert.strictEqual(result.value, numberOfItems)
+                })
+            })
         }
 
     },
@@ -34,8 +46,15 @@ module.exports = {
             selector: '//div//a[.="Food"]',
             locateStrategy: 'xpath'
         },
+        beverageLink: {
+            selector: '//div//a[.="Beverage"]',
+            locateStrategy: 'xpath'
+        },
         cartIcon: {
             selector: '.cart'
+        },
+        numberOnCart: {
+            selector: '#number_on_cart'
         }
     }
 }
