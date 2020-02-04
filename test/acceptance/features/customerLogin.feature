@@ -15,9 +15,9 @@ Feature: customer login
     Scenario Outline: login with wrong credentials
         When user enters username "<username>" and password "<password>" in the login form
         And user tries to login
-        Then an error message "<message>" should be shown in the new screen
+        Then an error message "<message>" should be shown in the screen
         Examples:
-            | username  | password    | message                      |
-            | zombie    | password    | username not found           |
-            | zombie123 | password123 | Invalid Username or Password |
-            | 123       | pass        | Invalid Username or Password |
+            | username  | password    | message                        |
+            | zombie    | password    | incorrect username or password |
+            | zombie123 | password123 | incorrect username or password |
+            | 123       | pass        | incorrect username or password |
