@@ -28,6 +28,14 @@ module.exports = {
         },
         isServeOptionVisible: function () {
             return this.waitForElementVisible('@serveButton')
+        },
+        removeItemFromCart: function (item) {
+            const removeItem = util.format(this.elements.itemToRemove.selector, item)
+            return this.useXpath().waitForElementVisible(removeItem).click(removeItem).useCss()
+        },
+        isItemRemoved: function (item) {
+            const itemToCheck = util.format(this.elements.removedItem.selector, item)
+            return this.useXpath().waitForElementNotPresent(itemToCheck).useCss()
         }
     },
     elements: {
@@ -46,6 +54,14 @@ module.exports = {
         },
         serveButton: {
             selector: '#serve_btn'
+        },
+        itemToRemove: {
+            selector: '//div/h2[.="%s"]/following-sibling::a[.="Remove"]',
+            locateStrategy: 'xpath'
+        },
+        removedItem: {
+            selector: '//div/h2[.="%s"]',
+            locateStrategy: 'xpath'
         }
     }
 }
