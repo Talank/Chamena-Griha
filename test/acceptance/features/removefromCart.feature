@@ -3,13 +3,14 @@ Feature: remove from cart
     I want to remove items from my cart
     So that unwanted items do not remain in my cart
 
-    Scenario: remove item from the cart
-        Given user has logged in as a customer
-        And user has browsed to cart page
-        When user tries to remvoe an item "<item>" from the cart
-        Then the item should be removed from the cart
-        And the total number of types of items in cart is updated
-        And total price of the items in the cart should be updated
+    Scenario Outline: remove item from the cart
+        Given user has logged in as a customer with username "zombie123" and password "password"
+        And the user has added item "<item>" to the cart
+        And the user has browsed to cart page
+        When the user tries to remove an item "<item>" from the cart
+        Then item "<item>" should be removed from the cart
+        And number of the item in the cart should be "0"
+        And total price of the items on the cart should be "0"
         Examples:
             | item    |
             | Pakauda |

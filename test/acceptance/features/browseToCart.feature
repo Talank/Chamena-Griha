@@ -4,6 +4,6 @@ Feature: browse to cart
     So that I can order items from my cart
 
     Scenario: browse to cart page
-        Given user has logged in as a customer
-        When user selects the cart icon
-        Then user should be redirected to the cart page
+        Given user has logged in as a customer with username "zombie123" and password "password"
+        When the user selects the cart icon
+        Then the user should be redirected to the cart page
