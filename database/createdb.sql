@@ -1,30 +1,8 @@
--- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 14, 2018 at 06:52 PM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.2.0
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `casdb`
+-- Creating the database `casdb`
 --
 
-CREATE DATABASE IF NOT EXISTS casdb;
-
--- --------------------------------------------------------
+CREATE DATABASE casdb;
 
 --
 -- Table structure for table `account`
@@ -35,13 +13,6 @@ CREATE TABLE `account` (
   `amount` float DEFAULT NULL,
   `u_id` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `account`
---
-
-INSERT INTO `account` (`account_no`, `amount`, `u_id`) VALUES
-(69, 0, 107);
 
 -- --------------------------------------------------------
 
@@ -68,13 +39,6 @@ CREATE TABLE `canteen` (
   `phone` bigint(20) DEFAULT NULL,
   `c_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `canteen`
---
-
-INSERT INTO `canteen` (`u_id`, `phone`, `c_id`) VALUES
-(82, 9840010300, 1);
 
 -- --------------------------------------------------------
 
@@ -105,13 +69,6 @@ CREATE TABLE `collegeadmin` (
   `clz_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `collegeadmin`
---
-
-INSERT INTO `collegeadmin` (`u_id`, `phone`, `clz_id`) VALUES
-(89, 61440866, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -128,20 +85,6 @@ CREATE TABLE `food` (
   `featured` int(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `food`
---
-
-INSERT INTO `food` (`food_id`, `name`, `price`, `photo`, `food_desc`, `type`, `featured`) VALUES
-(8, 'parautha', 60, 'parautha.jpg', 'bwfbwuebfubwew', 'food', 0),
-(9, 'Pakauda', 50, 'pakauda.jpg', 'asdfasfasdfw', 'food', 0),
-(10, 'Momo', 100, 'momo.jpg', 'it is a delicious food', 'food', 1),
-(11, 'Wings', 200, 'wings.jpg', 'it is just a food', 'food', 0),
-(12, 'Samosa', 50, 'samosa.jpg', 'sdfdfgdfgfgdfgd', 'food', 1),
-(15, 'Veg Nepali Thali', 150, 'veg_nepalithali.jpg', 'sdfsd desc', 'food', 0),
-(16, 'Chaat', 50, 'chaat.jpg', 'this is chaat', 'food', 1),
-(17, 'Fries', 80, 'fries.jpg', 'this is fries', 'food', 0),
-(18, 'Nepali Thali', 100, 'nepalithali.jpg', 'this is Nepali Thali', 'food', 1);
 
 -- --------------------------------------------------------
 
@@ -177,12 +120,6 @@ CREATE TABLE `student` (
   `gender` varchar(6) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `student`
---
-
-INSERT INTO `student` (`reg_id`, `first_name`, `last_name`, `u_id`, `photo`, `account_no`, `phone`, `gender`) VALUES
-(123, 'Zombie', 'Boie', 107, 'zombieboie.png', 69, 9800010111, 'male');
 
 -- --------------------------------------------------------
 
@@ -216,14 +153,6 @@ CREATE TABLE `user` (
   `forgot_pw_token` varchar(15) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`u_id`, `username`, `password`, `type`, `email`, `forgot_pw_token`) VALUES
-(82, 'canteen123', '5f4dcc3b5aa765d61d8327deb882cf99', 4, 'canteen@gces.edu.np', NULL),
-(89, 'college123', '5f4dcc3b5aa765d61d8327deb882cf99', 3, 'gces@gces.edu.np', NULL),
-(107, 'zombie123', '5f4dcc3b5aa765d61d8327deb882cf99', 0, 'zombie@gmail.com', NULL);
 
 --
 -- Indexes for dumped tables
