@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "cucumber-pretty": "^6.0.0",
+    "node-fetch": "^2.6.0",
     "yarn": "^1.21.1"
   },
   "devDependencies": {
