@@ -3,7 +3,7 @@ const assert = require('assert');
 
 module.exports = {
     url(){
-        return this.api.launch_url + '/Chamena-Griha/customer/customer_cart.php'
+        return this.api.launch_url + '/customer/customer_cart.php'
     },
     commands:{
         redirectToCartPage: function () {

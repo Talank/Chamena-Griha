@@ -1,4 +1,4 @@
-<?php 
+<?php
 	session_start();
 
 	include_once '../basic_functions.php';
@@ -8,10 +8,10 @@
 		$password = $conn->real_escape_string($_POST['password']);
 
 		$query = "SELECT * FROM user WHERE username = '$username'";
-		$result = mysqli_query($conn , $query)
-					or die("Error : ".error_connect());
+		$result = mysqli_query($conn , $query);
+//					or die("Error : ".error_connect());
 		$row = mysqli_fetch_array($result);
-		
+
 		if ($row){
 			if (md5($password) == ($row['password'])) {
 				$error_msg="";
