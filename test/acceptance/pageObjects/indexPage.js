@@ -51,7 +51,7 @@ module.exports = {
             selector: '.cart'
         },
         loginError : {
-            selector: '#loginError1'
+            selector: '#loginError'
         }
     }
 }

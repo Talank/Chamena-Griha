@@ -18,6 +18,6 @@ Feature: customer login
         Then an error message "<message>" should be shown in the screen
         Examples:
             | username  | password    | message                        |
-            | zombie    | password    | incorrect username or password |
-            | zombie123 | password123 | incorrect username or password |
-            | 123       | pass        | incorrect username or password |
+            | zombie    | password    | Incorrect username or password |
+            | zombie123 | password123 | Incorrect username or password |
+            | 123       | pass        | Incorrect username or password |
