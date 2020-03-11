@@ -2,7 +2,7 @@ const util = require('util')
 
 module.exports = {
     url(){
-        return this.api.launch_url + '/Chamena-Griha/customer/customer_food.php'
+        return this.api.launch_url + '/customer/customer_food.php'
     },
     commands:{
         redirectToFoodPage: function () {

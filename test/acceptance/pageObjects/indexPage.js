@@ -2,7 +2,7 @@ const assert = require('assert')
 
 module.exports = {
     url() {
-        return this.api.launch_url + '/Chamena-Griha/index.php'
+        return this.api.launch_url + '/index.php'
     },
     commands: {
         userEntersUsernamePassword: function (username, password) {
@@ -15,7 +15,7 @@ module.exports = {
                 .click('@loginButton').useCss();
         },
         redirectToHomePage: function () {
-            return this.waitForElementVisible('@sliderImage').waitForElementVisible('@cartIcon')
+            return this.waitForElementVisible('@sliderImage')
         },
         isLoginErrorMsgVisible: async function(errorMessage) {
                  await this.waitForElementVisible('@loginError')
@@ -51,7 +51,7 @@ module.exports = {
             selector: '.cart'
         },
         loginError : {
-            selector: '#loginError1'
+            selector: '#loginError'
         }
     }
 }

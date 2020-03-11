@@ -9,6 +9,10 @@ env:
   global:
     - SELENIUM_HOST=127.0.0.1
     - LAUNCH_URL=http://172.17.0.1:8000
+    - MYSQL_ROOT_PASSWORD: root
+    - MYSQL_DATABASE: casdb
+    - MYSQL_USER: root
+    - MYSQL_PASSWORD: root
 
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS casdb;'
@@ -29,8 +33,10 @@ install:
 
 before_script:
   - mysql --defaults-extra-file=./config.cnf casdb < database/casdb.sql
-  - php -S localhost:8000 &
-  - until curl -s localhost:8000; do sleep 5; done
+  # - mysql -u root -e "CREATE USER 'root'@'localhost' IDENTIFIED BY 'root';"
+  # - mysql -u root -e "GRANT ALL ON casdb.* TO 'root'@'localhost';"
+  - php -S 172.17.0.1:8000 &
+  - until curl -s 172.17.0.1:8000; do sleep 5; done
   #  - sudo apt-get install apache2
   #  - sudo a2enmod actions
   #  - sudo a2enmod rewrite
