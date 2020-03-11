@@ -1,5 +1,5 @@
 <?php
     include_once('../../process/db_conn.php');
-    $query = "select * from cart";
+    $query = "delete from cart";
     $result = mysqli_query($conn, $query);
 ?>

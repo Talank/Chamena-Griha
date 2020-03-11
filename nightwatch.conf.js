@@ -4,7 +4,7 @@ module.exports = {
     test_settings: {
         default: {
             selenium_host: '127.0.0.1',
-            launch_url: 'http://172.17.0.1',
+            launch_url: 'http://172.17.0.1:80',
             globals: {},
             desiredCapabilities: {
                 browserName: 'chrome',
