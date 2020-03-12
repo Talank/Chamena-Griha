@@ -3,8 +3,8 @@ class DBClass {
 
     private $host = "localhost";
     private $username = "root";
-    private $password = "<YOUR_DB_PASSWORD>";
-    private $database = "<YOUR_DB_NAME>";
+    private $password = "root";
+    private $database = "casdb";
 
     public $connection;
 
