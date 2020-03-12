@@ -1,4 +1,4 @@
-<?php 
+<?php
 	session_start();
 	include'../basic_functions.php';
 	include'db_conn.php';
@@ -11,11 +11,11 @@
 
        	list($time1_hour, $time1_min) = explode(":", $time);
 
-		if (($time1_hour <="09" && $clock=="am")||$clock=="pm") {
+//		if (($time1_hour <="09" && $clock=="am")||$clock=="pm") {
 			$total_price=0;
 			$u_id=$_SESSION['u_id'];
 			$query="select * from cart where u_id=$u_id and status=0";
-			$result = mysqli_query($conn, $query);		
+			$result = mysqli_query($conn, $query);
 			$nums=mysqli_num_rows($result);
 			if($nums>0){
 				while($row=mysqli_fetch_array($result)){
@@ -39,17 +39,17 @@
 					$query6="update cart set update_date='$date', update_time='$time', clock='$clock' where item_id=$item_id";
 					$result6=mysqli_query($conn,$query6);
 				}
-				
+
 				//updating the account of that user
 				$query4="update `account` set amount=amount+$total_price where u_id=$u_id";
 				$result4 = mysqli_query($conn, $query4);
 				if ($result4) {
 					redirect_to("../customer/customer_cart.php?order_success=$total_price%20status=$status");
-				}			
+				}
 			}
-		}
-		else{
-			redirect_to("../customer/customer_cart.php?msg=add_not_success_time");
-		}
-	} 	
+//		}
+//		else{
+//			redirect_to("../customer/customer_cart.php?msg=add_not_success_time");
+//		}
+	}
  ?>

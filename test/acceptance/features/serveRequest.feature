@@ -3,6 +3,7 @@ Feature: serve request
     I want my order to be served
     So that I can eat my food
 
+    @skip
     Scenario: request to serve order
         Given user has ordered "item"
         When user makes serve request

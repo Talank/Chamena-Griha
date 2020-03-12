@@ -13,5 +13,5 @@ Before(async () => {
 After(async () => {
     await closeSession();
     await stopWebDriver();
-    await fetch(client.launch_url + '/config/clean/cart.php')
+    await fetch(client.launch_url + '/config/clean/database.php')
 })
