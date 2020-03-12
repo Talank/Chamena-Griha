@@ -4,7 +4,7 @@ module.exports = {
     test_settings: {
         default: {
             selenium_host: process.env.SELENIUM_HOST || '127.0.0.1',
-            launch_url: process.env.LAUNCH_URL || 'http://172.17.0.1:80',
+            launch_url: process.env.LAUNCH_URL || 'http://172.17.0.1:80/Chamena-Griha',
             globals: {},
             desiredCapabilities: {
                 browserName: 'chrome',
