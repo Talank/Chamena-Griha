@@ -9,6 +9,7 @@ env:
   global:
 #    - SELENIUM_HOST=127.0.0.1
     - LAUNCH_URL=http://172.17.0.1:8000
+    - MYSQL_PASSWORD=
 
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS casdb;'

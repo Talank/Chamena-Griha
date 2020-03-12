@@ -13,14 +13,5 @@ Before(async () => {
 After(async () => {
     await closeSession();
     await stopWebDriver();
-    // await function clearCart() {
-    //     location.href = '../../config/clean/cart.php';
-    // }
-    // var xhr = new XMLHttpRequest();
-    // xhr.open('POST', "../../config/clean/cart.php", true);
-    header = {}
-    await fetch(client.launch_url + '/Chamena-Griha/config/clean/cart.php')
-        .then(res => {
-            console.log(res)
-        })
+    await fetch(client.launch_url + '/config/clean/database.php')
 })
