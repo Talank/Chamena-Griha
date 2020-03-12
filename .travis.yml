@@ -51,7 +51,7 @@ before_script:
 
 script:
   - cd $TRAVIS_BUILD_DIR/
-  - npm run test-e2e test/acceptance/features --tags "not (@skip)"
+  - npm run test-e2e test/acceptance/features
 
 cache:
   npm: true
