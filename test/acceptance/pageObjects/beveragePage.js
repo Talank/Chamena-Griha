@@ -1,6 +1,6 @@
 module.exports = {
     url(){
-        return this.api.launch_url + '/Chamena-Griha/customer/customer_beverage.php'
+        return this.api.launch_url + '/customer/customer_beverage.php'
     },
     commands:{
         redirectToBeveragePage: function () {
