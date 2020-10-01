@@ -1,5 +1,7 @@
 <?php
     include_once('../../process/db_conn.php');
+
+    //Clean the cart after add to cart and order
     $query = "delete from cart";
     $result = mysqli_query($conn, $query);
 
