@@ -8,6 +8,20 @@ This project aims to simplify the food ordering and payment process in school an
 2) import the file `database/casdb.sql` in your newly created database.
 3) start the php server `pap -S 172.17.0.1:8000`
 
+## Default users for testing purpose
+
+- **Students**\
+  username- zombie123\
+  password- password
+
+- **College_admin**\
+  username- college123\
+  password- password
+
+- **Canteen**\
+  username- canteen123\
+  password- password
+
 ## Run test
 1) Run the project locally
 2) Run the selenium server. You can run selenium via docker as follows:
