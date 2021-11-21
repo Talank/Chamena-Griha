@@ -1,12 +1,12 @@
 # Chamena Griha
 --------------------------------
-A web project built using Web Technologies such as Html, Css, Javascript and Php.
+A web project built using Web Technologies such as Html, Css, Javascript and PHP.
 This project aims to simplify the food ordering and payment process in school and college canteens by removing the overheads such as long queues of people waiting for their turn to order food and make payment.
 
 ## Run the project in localhost
 1) Create a db named `casdb` using mySQL
 2) import the file `database/casdb.sql` in your newly created database.
-3) start the php server `pap -S 172.17.0.1:8000`
+3) start the php server `php -S 172.17.0.1:8000`
 
 ## Default users for testing purpose
 
